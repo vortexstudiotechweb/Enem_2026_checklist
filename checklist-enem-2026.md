@@ -1,0 +1,598 @@
+# Checklist Completa de Estudos — ENEM 2026
+
+> [!TIP]
+> **Como usar esta checklist:**
+> - Marque cada caixa `- [x]` conforme concluir a **teoria + bateria de questões** do tópico.
+> - Os assuntos marcados com 🔥 possuem **altíssima recorrência histórica** no ENEM — dê atenção redobrada a eles na resolução de provas anteriores.
+
+---
+
+## 1. Linguagens, Códigos e suas Tecnologias
+
+### 1.1 Língua Portuguesa
+- [ ] **Interpretação e Compreensão Textual** 🔥
+  - [ ] Inferência, pressuposto e subentendido
+  - [ ] Informações explícitas vs. implícitas
+  - [ ] Ironia, ambiguidade, humor e duplo sentido (tirinhas, charges e cartuns)
+  - [ ] Textos multimodais / mistos (linguagem verbal e não verbal)
+- [ ] **Gêneros e Tipologias Textuais** 🔥
+  - [ ] Tipos textuais: narração, descrição, dissertação, injunção e exposição
+  - [ ] Gêneros jornalísticos: notícia, reportagem, editorial, artigo de opinião, crônica
+  - [ ] Gêneros publicitários: anúncio, campanha comunitária/institucional, propaganda
+  - [ ] Gêneros digitais: post, blog, comentário, meme, hipertexto
+  - [ ] Gêneros epistolares, científicos e normativos (carta, resumo, divulgação científica, estatuto)
+- [ ] **Funções da Linguagem** 🔥
+  - [ ] Função referencial (denotativa/informativa)
+  - [ ] Função emotiva (expressiva)
+  - [ ] Função conativa (apelativa)
+  - [ ] Função fática
+  - [ ] Função metalinguística
+  - [ ] Função poética
+- [ ] **Variação Linguística e Sociolinguística** 🔥
+  - [ ] Variação diatópica (regional/geográfica)
+  - [ ] Variação diastrática (social/gírias/jargões)
+  - [ ] Variação diafásica (situacional/registro formal vs. informal)
+  - [ ] Variação diacrônica (histórica)
+  - [ ] Norma-padrão vs. variedades não padrão e preconceito linguístico
+  - [ ] Língua falada vs. língua escrita (marcas de oralidade)
+  - [ ] Patrimônio linguístico brasileiro e línguas indígenas/afro-brasileiras
+- [ ] **Semântica e Estilística** 🔥
+  - [ ] Denotação e conotação
+  - [ ] Polissemia, homonímia, paronímia, sinonímia e antonímia
+  - [ ] Figuras de palavras: metáfora, metonímia, comparação, catacrese, sinestesia
+  - [ ] Figuras de pensamento: antítese, paradoxo, eufemismo, ironia, hipérbole, prosopopeia (personificação), gradação
+  - [ ] Figuras de sintaxe/construção: elipse, zeugma, pleonasmo, anáfora, polissíndeto, inversão (hipérbato)
+  - [ ] Figuras de som: aliteração, assonância, onomatopeia
+- [ ] **Coesão, Coerência e Intertextualidade** 🔥
+  - [ ] Coesão referencial (anáfora, catáfora, elipse, substituição lexical)
+  - [ ] Coesão sequencial e operadores argumentativos (conjunções e conectivos)
+  - [ ] Intertextualidade explícita e implícita: citação, paráfrase, paródia, alusão, epígrafe
+  - [ ] Progressão temática e coerência textual
+- [ ] **Morfossintaxe Aplicada ao Sentido do Texto**
+  - [ ] Formação de palavras (derivação, composição, neologismos, estrangeirismos)
+  - [ ] Classes de palavras e seu papel semântico (substantivo, adjetivo, verbo, advérbio, pronome)
+  - [ ] Tempos e modos verbais como recursos expressivos (valor do pretérito imperfeito, futuro do pretérito, imperativo)
+  - [ ] Vozes verbais (ativa, passiva analítica/sintética, reflexiva) e efeitos de sentido
+  - [ ] Coordenação e subordinação (valor semântico das orações)
+  - [ ] Concordância verbal e nominal
+  - [ ] Regência verbal, nominal e crase
+  - [ ] Pontuação como recurso estilístico e sintático
+
+### 1.2 Literatura
+- [ ] **Teoria Literária**
+  - [ ] Conceito de literatura, texto literário vs. não literário
+  - [ ] Gêneros literários: lírico, épico/narrativo e dramático
+  - [ ] Elementos da narrativa (foco narrativo, espaço, tempo psicológico/cronológico, personagens, discurso direto/indireto/indireto livre)
+  - [ ] Recursos poéticos (eu lírico, verso livre, métrica, ritmo, rima)
+- [ ] **Escolas Literárias — Era Colonial**
+  - [ ] Quinhentismo (Literatura de Informação e de Catequese)
+  - [ ] Barroco (Gregório de Matos, Padre Antônio Vieira, cultismo e conceptismo)
+  - [ ] Arcadismo / Neoclassicismo (Cláudio Manuel da Costa, Tomás Antônio Gonzaga, bucolismo, *carpe diem*)
+- [ ] **Escolas Literárias — Era Nacional (Século XIX)**
+  - [ ] Romantismo — Poesia (1ª geração indianista/nacionalista, 2ª geração ultrarromântica, 3ª geração condoreira/social)
+  - [ ] Romantismo — Prosa (romances urbanos, indianistas, regionalistas e históricos; José de Alencar, Manuel Antônio de Almeida)
+  - [ ] Realismo 🔥 (Machado de Assis, crítica social, análise psicológica, ironia)
+  - [ ] Naturalismo (Aluísio Azevedo, determinismo, zoomorfização)
+  - [ ] Parnasianismo (Olavo Bilac, arte pela arte, rigor formal)
+  - [ ] Simbolismo (Cruz e Sousa, Alphonsus de Guimaraens, subjetivismo, musicalidade)
+- [ ] **Pré-Modernismo e Vanguardas Europeias** 🔥
+  - [ ] Vanguardas Europeias: Futurismo, Cubismo, Expressionismo, Dadaísmo, Surrealismo
+  - [ ] Pré-Modernismo no Brasil (Euclides da Cunha, Lima Barreto, Monteiro Lobato, Graça Aranha, Augusto dos Anjos)
+- [ ] **Modernismo no Brasil** 🔥
+  - [ ] Semana de Arte Moderna de 1922
+  - [ ] 1ª Fase Modernista — Heroica (Oswald de Andrade, Mário de Andrade, Manuel Bandeira; manifestos, ruptura e identidade nacional)
+  - [ ] 2ª Fase Modernista — Poesia de 30 (Carlos Drummond de Andrade, Cecília Meireles, Vinícius de Moraes, Jorge de Lima, Murilo Mendes)
+  - [ ] 2ª Fase Modernista — Prosa de 30 / Regionalismo (Graciliano Ramos, Jorge Amado, Rachel de Queiroz, José Lins do Rego, Érico Veríssimo)
+  - [ ] 3ª Fase Modernista — Geração de 45 e Prosa Intimista/Regional (Clarice Lispector, Guimarães Rosa, João Cabral de Melo Neto, Lygia Fagundes Telles)
+- [ ] **Literatura Contemporânea e Produções Marginais** 🔥
+  - [ ] Concretismo, Neoconcretismo e Poesia Práxis
+  - [ ] Tropicália e Poesia Marginal (Geração Mimeógrafo, Paulo Leminski, Ana Cristina Cesar)
+  - [ ] Literatura Contemporânea (Conceição Evaristo, Carolina Maria de Jesus, Ferreira Gullar, Adélia Prado, Milton Hatoum, Itamar Vieira Junior, Ailton Krenak)
+  - [ ] Literatura Africana de Língua Portuguesa
+
+### 1.3 Artes
+- [ ] **História da Arte (Antiguidade ao Século XIX)**
+  - [ ] Arte Pré-Histórica (rupestre) e Arte na Antiguidade (Egípcia, Grega, Romana)
+  - [ ] Arte Medieval (Bizantina, Românica, Gótica)
+  - [ ] Renascimento Artístico e Maneirismo
+  - [ ] Barroco Europeu e Barroco Mineiro/Brasileiro 🔥 (Aleijadinho, Mestre Ataíde)
+  - [ ] Missão Artística Francesa, Neoclassicismo e Romantismo nas Artes Plásticas
+- [ ] **Arte Moderna (Séculos XIX e XX)** 🔥
+  - [ ] Impressionismo e Pós-Impressionismo
+  - [ ] Vanguardas Artísticas Europeias (Picasso, Dalí, Duchamp, Kandinsky, Munch)
+  - [ ] Modernismo Brasileiro nas Artes Plásticas (Tarsila do Amaral, Anita Malfatti, Di Cavalcanti, Candido Portinari, Lasar Segall)
+- [ ] **Arte Contemporânea e Patrimônio Cultural** 🔥
+  - [ ] Pop Art, Op Art, Minimalismo e Arte Conceitual
+  - [ ] Novas linguagens: Instalação, Performance, *Happening*, *Body Art*, Videoarte, *Land Art*
+  - [ ] Arte Urbana: Grafite, Pichação, *Stencil*, Intervenção Urbana
+  - [ ] Fotografia, Cinema, Teatro e Dança como expressões artísticas
+  - [ ] Música Popular Brasileira (Samba, Bossa Nova, MPB, Tropicália, Rap, Hip-Hop, Funk, Regionalismos)
+  - [ ] Patrimônio Histórico e Cultural (Material e Imaterial, IPHAN, Cultura Afro-Brasileira e Indígena)
+
+### 1.4 Educação Física e Tecnologias da Informação (TICs)
+- [ ] **Educação Física e Cultura Corporal** 🔥
+  - [ ] Esporte, lazer, inclusão social e cidadania
+  - [ ] Padrões estéticos, culto ao corpo, distúrbios alimentares e uso de anabolizantes
+  - [ ] Saúde física e mental, sedentarismo e qualidade de vida
+  - [ ] Jogos, lutas, danças e ginásticas como manifestações culturais
+  - [ ] Esporte de alto rendimento, mercantilização e questões de gênero no esporte
+- [ ] **Tecnologias da Informação e Comunicação (TICs)** 🔥
+  - [ ] Impactos sociais da internet, redes sociais e cultura digital
+  - [ ] *Fake news*, pós-verdade, bolhas algorítmicas e desinformação
+  - [ ] Cibercultura, inclusão digital, privacidade de dados e inteligência artificial
+  - [ ] Linguagem digital (*internetês*, memes, hiperlinks, *podcasts*)
+
+### 1.5 Língua Estrangeira Moderna (Inglês ou Espanhol)
+- [ ] **Estratégias de Leitura e Interpretação** 🔥
+  - [ ] *Skimming* (leitura global) e *Scanning* (busca de informações específicas)
+  - [ ] Uso de marcas tipográficas, títulos, fontes e contexto
+  - [ ] Cognatos e falsos cognatos (*False Friends* / *Falsos Amigos*)
+- [ ] **Gêneros Textuais em Língua Estrangeira** 🔥
+  - [ ] Tirinhas, cartuns e infográficos
+  - [ ] Notícias, artigos científicos e reportagens internacionais
+  - [ ] Letras de música, poemas e trechos literários (questões identitárias, pós-coloniais e culturais)
+  - [ ] Campanhas publicitárias e institucionais
+- [ ] **Gramática Contextualizada**
+  - [ ] Pronomes e referência pronominal no texto
+  - [ ] Conectivos / *Linking words* / *Conectores discursivos* (adição, oposição, causa, consequência)
+  - [ ] Tempos verbais e modais aplicados à intenção comunicativa
+
+---
+
+## 2. Redação do ENEM
+
+### 2.1 Estrutura e Competências
+- [ ] **Competência 1 — Norma-Padrão da Língua Portuguesa**
+  - [ ] Ortografia, acentuação e uso do hífen
+  - [ ] Pontuação (uso da vírgula, dois-pontos, travessão)
+  - [ ] Concordância verbal e nominal
+  - [ ] Regência verbal/nominal e crase
+  - [ ] Colocação pronominal e paralelismo sintático
+  - [ ] Ausência de marcas de oralidade e adequação vocabular
+- [ ] **Competência 2 — Tema, Tipologia e Repertório Sociocultural** 🔥
+  - [ ] Leitura dos textos motivadores e identificação dos recortes temáticos (evitar tangenciamento)
+  - [ ] Estrutura dissertativo-argumentativa (Introdução, Desenvolvimento 1, Desenvolvimento 2, Conclusão)
+  - [ ] Repertório sociocultural produtivo, legítimo e pertinente (filósofos, sociólogos, dados, leis, obras literárias, cinema, história)
+- [ ] **Competência 3 — Projeto de Texto e Argumentação** 🔥
+  - [ ] Formulação de tese clara com dois argumentos (A1 e A2)
+  - [ ] Estratégias argumentativas (causa e consequência, comparação histórica, exemplificação, contra-argumentação)
+  - [ ] Coerência interna e aprofundamento crítico (evitar lacunas argumentativas)
+- [ ] **Competência 4 — Coesão Textual** 🔥
+  - [ ] Conectivos interparágrafos (início do D1, D2 e Conclusão)
+  - [ ] Conectivos intraparágrafos (entre períodos do mesmo parágrafo)
+  - [ ] Diversificação vocabular e evitação de repetições
+- [ ] **Competência 5 — Proposta de Intervenção** 🔥
+  - [ ] **Agente** (quem fará a ação: ministérios, mídia, escolas, ONGs, Poder Legislativo, etc.)
+  - [ ] **Ação** (o que será feito de forma prática, não nula)
+  - [ ] **Meio/Modo** (por meio de quê / como será executado)
+  - [ ] **Efeito** (para quê / qual a finalidade social)
+  - [ ] **Detalhamento** (explicação, exemplificação ou justificativa de um dos elementos)
+  - [ ] Respeito aos Direitos Humanos
+
+### 2.2 Eixos Temáticos de Repertório para Treino
+- [ ] Eixo 1: Educação, Ciência e Formação Cidadã
+- [ ] Eixo 2: Saúde Pública, Saúde Mental e Bem-Estar
+- [ ] Eixo 3: Meio Ambiente, Crise Climática e Sustentabilidade
+- [ ] Eixo 4: Tecnologia, Inteligência Artificial e Mundo Digital
+- [ ] Eixo 5: Cidadania, Direitos Humanos, Invisibilidade Social e Minorias
+- [ ] Eixo 6: Cultura, Patrimônio, Esporte e Identidade Nacional
+- [ ] Eixo 7: Trabalho, Economia e Desigualdade Social
+- [ ] Eixo 8: Segurança Pública, Justiça e Democracia
+
+---
+
+## 3. Ciências Humanas e suas Tecnologias
+
+### 3.1 História do Brasil
+- [ ] **Brasil Pré-Colonial e Povos Originários**
+  - [ ] Diversidade dos povos indígenas no território brasileiro
+  - [ ] Expedições guarda-costas, escambo e extração do pau-brasil
+- [ ] **Brasil Colônia** 🔥
+  - [ ] Capitanias hereditárias e Governo-Geral
+  - [ ] Economia açucareira e sociedade patriarcal no Nordeste
+  - [ ] Escravidão indígena e africana, tráfico negreiro, resistência e quilombos (Palmares)
+  - [ ] Ação dos jesuítas e missões
+  - [ ] União Ibérica e Invasões Estrangeiras (Francesas e Holandesas / Brasil Holandês)
+  - [ ] Expansão territorial: entradas, bandeiras, pecuária e drogas do sertão (Tratados de limites)
+  - [ ] Ciclo do Ouro e sociedade mineradora no século XVIII
+  - [ ] Revoltas Nativistas (Beckman, Emboabas, Mascates, Felipe dos Santos)
+  - [ ] Revoltas Separatistas / Emancipacionistas (Inconfidência Mineira e Conjuração Baiana)
+- [ ] **Período Joanino e Independência (1808–1822)**
+  - [ ] Vinda da Família Real, Abertura dos Portos e transformações no Rio de Janeiro
+  - [ ] Revolução Pernambucana de 1817
+  - [ ] Processo de Independência do Brasil
+- [ ] **Brasil Império (1822–1889)** 🔥
+  - [ ] Primeiro Reinado: Constituição de 1824 (Poder Moderador), Confederação do Equador, Crise e Abdicação
+  - [ ] Período Regencial: avanços liberais, regresso conservador e Revoltas Regenciais (Cabanagem, Farroupilha, Sabinada, Balaiada, Revolta dos Malês)
+  - [ ] Segundo Reinado — Política: Parlamentarismo às avessas, Liberais vs. Conservadores, Revolução Praieira
+  - [ ] Segundo Reinado — Economia e Sociedade: Complexo cafeeiro (Vale do Paraíba vs. Oeste Paulista), Era Mauá, imigração europeia
+  - [ ] Guerra do Paraguai e suas consequências
+  - [ ] Movimento Abolicionista, leis abolicionistas, Lei Áurea e pós-abolição
+  - [ ] Crise do Império (Questões Militar, Religiosa e Abolicionista) e Proclamação da República
+- [ ] **Primeira República / República Velha (1889–1930)** 🔥
+  - [ ] República da Espada (Deodoro da Fonseca, Floriano Peixoto, Constituição de 1891, Encilhamento)
+  - [ ] República Oligárquica: Política dos Governadores, Coronelismo, Voto de Cabresto, Política do Café com Leite, Convênio de Taubaté
+  - [ ] Movimentos Sociais Rurais: Canudos, Contestado e Cangaço
+  - [ ] Movimentos Sociais Urbanos: Revolta da Vacina, Revolta da Chibata, Movimento Operário e Greve de 1917
+  - [ ] Crise dos anos 1920: Tenentismo, Coluna Prestes e Revolução de 1930
+- [ ] **Era Vargas (1930–1945)** 🔥
+  - [ ] Governo Provisório e Revolução Constitucionalista de 1932
+  - [ ] Constituição de 1934 (voto feminino, leis trabalhistas), AIB e ANL, Intentona Comunista
+  - [ ] Estado Novo (1937–1945): Constituição Polaca, DIP, populismo, trabalhismo (CLT), industrialização de base (CSN, Vale) e participação na 2ª Guerra Mundial
+- [ ] **República Populista / Democrática (1946–1964)** 🔥
+  - [ ] Governo Dutra e Constituição de 1946 (alinhamento aos EUA na Guerra Fria)
+  - [ ] Segundo Governo Vargas (nacionalismo, Petrobras, crise política)
+  - [ ] Governo Juscelino Kubitschek (Plano de Metas, "50 anos em 5", rodoviarismo, construção de Brasília, endividamento e inflação)
+  - [ ] Governos Jânio Quadros e João Goulart (Reformas de Base, Parlamentarismo, polarização e Golpe Civil-Militar de 1964)
+- [ ] **Ditadura Civil-Militar (1964–1985)** 🔥
+  - [ ] Governos Castelo Branco e Costa e Silva (Atos Institucionais, AI-2, Constituição de 1967, AI-5)
+  - [ ] Anos de Chumbo (Governo Médici): repressão, censura, resistência armada, movimentos culturais (Tropicália, Cinema Novo) e "Milagre Econômico"
+  - [ ] Abertura lenta, gradual e segura (Geisel e Figueiredo): crise do petróleo, Lei da Anistia, retorno do pluripartidarismo, greves do ABC, Diretas Já
+- [ ] **Nova República (1985–presente)** 🔥
+  - [ ] Governo Sarney e Constituição Cidadã de 1988
+  - [ ] Governos Collor (neoliberalismo, confisco da poupança, *impeachment*) e Itamar Franco (Plano Real)
+  - [ ] Governos FHC (privatizações, estabilidade monetária, programas sociais)
+  - [ ] Governos Lula, Dilma, Temer e Brasil contemporâneo (políticas sociais, crises econômicas e políticas)
+
+### 3.2 História Geral
+- [ ] **Pré-História e Antiguidade Oriental**
+  - [ ] Paleolítico, Revolução Neolítica e Idade dos Metais
+  - [ ] Mesopotâmia, Egito Antigo, Hebreus, Fenícios e Persas (modo de produção asiático / hidráulico)
+- [ ] **Antiguidade Clássica** 🔥
+  - [ ] Grécia Antiga: formação da *pólis*, democracia ateniense vs. oligarquia espartana, cultura helênica e helenística
+  - [ ] Roma Antiga: Monarquia, República (lutas entre patrícios e plebeus, expansão territorial), Império (Pão e Circo, *Pax Romana*, cristianismo, crise do escravismo e invasões bárbaras)
+- [ ] **Idade Média** 🔥
+  - [ ] Império Bizantino e Civilização Islâmica
+  - [ ] Reinos Germânicos e Império Carolíngio
+  - [ ] Alta Idade Média: Feudalismo (política, economia, sociedade estamental, papel da Igreja Católica)
+  - [ ] Baixa Idade Média: Cruzadas, renascimento comercial e urbano, corporações de ofício, formação das Monarquias Nacionais e Crise do Século XIV (Peste Negra, Guerra dos Cem Anos, revoltas camponesas)
+- [ ] **Idade Moderna** 🔥
+  - [ ] Renascimento Cultural e Científico e Humanismo
+  - [ ] Reforma Protestante (Lutero, Calvino, Henrique VIII) e Contrarreforma Católica
+  - [ ] Absolutismo Monárquico e Mercantilismo
+  - [ ] Grandes Navegações / Expansão Marítima Europeia
+  - [ ] Civilizações Pré-Colombianas (Maias, Astecas e Incas) e Colonização Espanhola e Inglesa na América
+  - [ ] Revoluções Inglesas do Século XVII (Puritana e Gloriosa)
+  - [ ] Iluminismo e Despotismo Esclarecido
+  - [ ] Primeira Revolução Industrial (cercamentos, maquinofatura, surgimento do proletariado)
+  - [ ] Independência dos Estados Unidos
+- [ ] **Idade Contemporânea — Século XIX** 🔥
+  - [ ] Revolução Francesa (1789–1799) e Era Napoleônica (Congresso de Viena)
+  - [ ] Independências da América Espanhola e do Haiti (caudilhismo e fragmentação)
+  - [ ] Revoluções Liberais de 1830 e 1848 (Primavera dos Povos)
+  - [ ] Ideologias do Século XIX: Liberalismo, Socialismo Utópico e Científico (Marxismo), Anarquismo, Nacionalismo e Darwinismo Social
+  - [ ] Unificações Italiana e Alemã
+  - [ ] Estados Unidos no Século XIX (Marcha para o Oeste, Doutrina Monroe, Guerra de Secessão)
+  - [ ] Segunda Revolução Industrial, Imperialismo e Neocolonialismo na África (Conferência de Berlim) e na Ásia
+- [ ] **Idade Contemporânea — Séculos XX e XXI** 🔥
+  - [ ] Primeira Guerra Mundial (1914–1918) e Tratado de Versalhes
+  - [ ] Revolução Russa de 1917 e formação da URSS (Lenin e Stalin)
+  - [ ] Crise de 1929 (*Crash* da Bolsa de NY) e *New Deal*
+  - [ ] Regimes Totalitários: Fascismo Italiano, Nazismo Alemão, Salazarismo e Franquismo
+  - [ ] Segunda Guerra Mundial (1939–1945) e Holocausto
+  - [ ] Guerra Fria (bipolaridade, corrida espacial e armamentista, OTAN vs. Pacto de Varsóvia, Guerra da Coreia, Guerra do Vietnã, Crise dos Mísseis)
+  - [ ] Revolução Chinesa e Revolução Cubana
+  - [ ] Populismo e Ditaduras Militares na América Latina (Operação Condor)
+  - [ ] Descolonização Afro-Asiática (Independência da Índia, guerras de libertação na África, *Apartheid* na África do Sul)
+  - [ ] Queda do Muro de Berlim, fim da URSS e Nova Ordem Mundial
+
+### 3.3 Geografia
+- [ ] **Cartografia** 🔥
+  - [ ] Coordenadas geográficas (latitude e longitude) e Fusos horários
+  - [ ] Escala cartográfica (numérica e gráfica)
+  - [ ] Projeções cartográficas (Mercator, Peters, Robinson; cilíndrica, cônica, azimutal)
+  - [ ] Curvas de nível (altimetria), sensoriamento remoto, GPS e SIG
+- [ ] **Geografia Física — Geologia, Relevo e Solos** 🔥
+  - [ ] Estrutura interna da Terra e Tectônica de Placas (vulcanismo, abalos sísmicos, epirogênese e orogênese)
+  - [ ] Ciclo das rochas (magmáticas/ígneas, sedimentares e metamórficas) e estruturas geológicas (crátons/escudos cristalinos, bacias sedimentares, dobramentos modernos)
+  - [ ] Agentes internos (endógenos) e externos (exógenos) do relevo
+  - [ ] Intemperismo (físico, químico e biológico), pedogênese (formação dos solos) e conservação dos solos (erosão, voçorocas, lixiviação, laterização, desertificação, arenização, curvas de nível, terraceamento, plantio direto)
+  - [ ] Relevo brasileiro (classificações de Aroldo de Azevedo, Aziz Ab'Sáber e Jurandyr Ross)
+- [ ] **Geografia Física — Climatologia, Hidrografia e Biomas** 🔥
+  - [ ] Elementos e fatores climáticos (latitude, altitude, maritimidade/continentalidade, massas de ar, correntes marítimas, relevo)
+  - [ ] Fenômenos climáticos e atmosféricos: El Niño e La Niña, Inversão Térmica, Ilhas de Calor, Chuva Ácida, Efeito Estufa e Aquecimento Global
+  - [ ] Climas do mundo e do Brasil (climogramas e massas de ar atuantes no Brasil)
+  - [ ] Ciclo hidrológico, distribuição da água, aquíferos (Guarani e Alter do Chão) e Bacias Hidrográficas brasileiras
+  - [ ] Biomas mundiais e Domínios Morfoclimáticos brasileiros (Aziz Ab'Sáber: Amazônico, Cerrado, Mares de Morros/Mata Atlântica, Caatinga, Araucárias, Pradarias e Faixas de Transição — Pantanal, Mata dos Cocais, Agreste)
+  - [ ] Conferências Ambientais Internacionais (Estocolmo-72, Rio-92, Kyoto, Rio+20, Acordo de Paris, COPs) e Unidades de Conservação
+- [ ] **Geografia Humana — Demografia e Migrações** 🔥
+  - [ ] Conceitos demográficos (taxas de natalidade, mortalidade, fecundidade, crescimento vegetativo)
+  - [ ] Transição demográfica, pirâmides etárias, bônus demográfico e envelhecimento populacional
+  - [ ] Teorias demográficas (Malthusiana, Neomalthusiana, Reformista/Marxista e Ecomalthusiana)
+  - [ ] População economicamente ativa (PEA), setores da economia e indicadores sociais (IDH, Índice de Gini)
+  - [ ] Migrações internacionais (refugiados, xenofobia, fuga de cérebros) e migrações internas no Brasil (êxodo rural, migração pendular, sazonal/transumância, fluxos históricos entre regiões)
+- [ ] **Geografia Humana — Urbanização** 🔥
+  - [ ] Processo de urbanização mundial e brasileiro
+  - [ ] Rede e hierarquia urbana: metrópole, megalópole, megacidade, cidade global, conurbação e região metropolitana
+  - [ ] Problemas socioambientais urbanos: macrocefalia urbana, segregação socioespacial, gentrificação, déficit habitacional, mobilidade urbana, lixo e saneamento básico
+- [ ] **Geografia Econômica — Agropecuária e Questão Agrária** 🔥
+  - [ ] Sistemas agrícolas (intensivo vs. extensivo, *plantation*, agricultura familiar vs. agronegócio)
+  - [ ] Revolução Verde, modernização agrícola, transgênicos, agrotóxicos e agricultura orgânica/sustentável
+  - [ ] Estrutura fundiária brasileira, concentração de terras, Estatuto da Terra, reforma agrária, grilagem, conflitos no campo e fronteira agrícola (MATOPIBA e arco do desmatamento)
+- [ ] **Geografia Econômica — Indústria, Energia, Comércio e Transporte** 🔥
+  - [ ] Tipos de indústria e modelos produtivos: Taylorismo, Fordismo, Toyotismo (acumulação flexível) e Indústria 4.0
+  - [ ] Industrialização brasileira (de Vargas aos dias atuais), concentração e desconcentração industrial
+  - [ ] Matriz energética mundial e brasileira: fontes não renováveis (petróleo, carvão mineral, gás natural, energia nuclear) e renováveis (hidrelétrica, solar, eólica, biomassa/biocombustíveis, hidrogênio verde)
+  - [ ] Modais de transporte no Brasil e no mundo (rodoviário, ferroviário, hidroviário, dutoviário, aeroviário) e custos logísticos
+- [ ] **Geopolítica e Globalização** 🔥
+  - [ ] Fases do capitalismo (Comercial, Industrial, Financeiro e Informacional) e Divisão Internacional do Trabalho (DIT)
+  - [ ] Globalização, redes geográficas, multinacionais/transnacionais e comércio mundial
+  - [ ] Blocos econômicos (União Europeia, Mercosul, USMCA, ASEAN) e BRICS
+  - [ ] Organismos internacionais (ONU, FMI, Banco Mundial, OMC)
+  - [ ] Conflitos geopolíticos contemporâneos (Oriente Médio — Questão Palestina, Primavera Árabe —, Leste Europeu — Rússia e Ucrânia —, tensões EUA-China, conflitos na África e América Latina)
+
+### 3.4 Filosofia
+- [ ] **Filosofia Antiga** 🔥
+  - [ ] Passagem do mito ao *logos* e Filósofos Pré-Socráticos (Tales, Heráclito, Parmênides, Demócrito)
+  - [ ] Sofistas (relativismo e retórica) vs. Sócrates (maiêutica, ironia, antropologia ética)
+  - [ ] Platão (Teoria das Ideias/Mundos, Alegoria da Caverna, epistemologia e política na *República*)
+  - [ ] Aristóteles (metafísica: ato e potência, substância, quatro causas; ética da virtude / justa medida / *eudaimonia*; política: o ser humano como animal político)
+  - [ ] Filosofia Helenística: Estoicismo, Epicurismo, Cinismo e Ceticismo
+- [ ] **Filosofia Medieval e Renascentista**
+  - [ ] Patrística (Santo Agostinho: fé e razão, livre-arbítrio e problema do mal)
+  - [ ] Escolástica (São Tomás de Aquino: síntese aristotélico-cristã, cinco vias)
+  - [ ] Filosofia Política Renascentista: Nicolau Maquiavel (*O Príncipe*, *virtù* e *fortuna*, autonomia da política)
+- [ ] **Filosofia Moderna — Epistemologia e Política** 🔥
+  - [ ] Racionalismo (René Descartes — dúvida metódica, *cogito* —, Spinoza)
+  - [ ] Empirismo Britânico (Francis Bacon — método indutivo, ídolos —, John Locke — *tábula rasa* —, David Hume — hábito e ceticismo moderado)
+  - [ ] Contratualistas (Thomas Hobbes — Estado absoluto, *Leviatã* —, John Locke — liberalismo, direitos naturais, propriedade —, Jean-Jacques Rousseau — bondade natural, vontade geral, contrato social)
+  - [ ] Iluminismo (Montesquieu — tripartição dos poderes —, Voltaire)
+  - [ ] Immanuel Kant (criticismo, juízos sintéticos *a priori*, esclarecimento/*Aufklärung*, imperativo categórico e ética deontológica)
+- [ ] **Filosofia Contemporânea** 🔥
+  - [ ] Idealismo Alemão (Hegel: dialética e história) e Materialismo Histórico (Karl Marx)
+  - [ ] Utilitarismo (Jeremy Bentham e John Stuart Mill: ética consequencialista)
+  - [ ] Schopenhauer e Friedrich Nietzsche (crítica à metafísica e à moral tradicional, apolíneo e dionisíaco, niilismo, vontade de potência, *Übermensch*)
+  - [ ] Fenomenologia e Existencialismo (Husserl, Heidegger, Jean-Paul Sartre — "a existência precede a essência", liberdade e angústia —, Simone de Beauvoir, Albert Camus)
+  - [ ] Escola de Frankfurt e Teoria Crítica (Adorno e Horkheimer — indústria cultural, razão instrumental —, Walter Benjamin, Jürgen Habermas — agir comunicativo e esfera pública)
+  - [ ] Michel Foucault (microfísica do poder, sociedade disciplinar, panóptico, biopolítica e biopoder)
+  - [ ] Hannah Arendt (origens do totalitarismo, banalidade do mal, condição humana: *labor*, trabalho e ação)
+  - [ ] John Rawls (Teoria da Justiça como equidade, véu da ignorância) e Hans Jonas (Princípio Responsabilidade e bioética)
+  - [ ] Filosofia da Ciência (Karl Popper — falseacionismo — e Thomas Kuhn — paradigmas científicos)
+
+### 3.5 Sociologia
+- [ ] **Surgimento da Sociologia e Clássicos** 🔥
+  - [ ] Contexto histórico (Revoluções Industrial e Francesa) e Positivismo (Auguste Comte)
+  - [ ] Émile Durkheim (fato social, coesão social, solidariedade mecânica e orgânica, anomia, suicídio)
+  - [ ] Max Weber (ação social, tipos ideais, ética protestante e espírito do capitalismo, desencantamento do mundo, formas de dominação legítima: tradicional, carismática e racional-legal)
+  - [ ] Karl Marx (materialismo histórico e dialético, luta de classes, mais-valia, alienação, fetichismo da mercadoria, infraestrutura e superestrutura, ideologia)
+- [ ] **Cultura, Identidade e Socialização** 🔥
+  - [ ] Conceito antropológico de cultura, etnocentrismo e relativismo cultural
+  - [ ] Diversidade cultural, multiculturalismo, sincretismo, aculturação e assimilação
+  - [ ] Patrimônio cultural material e imaterial e memória social
+  - [ ] Indústria cultural, cultura de massa, cultura erudita e cultura popular
+  - [ ] Instituições sociais (família, escola, religião, Estado) e processos de socialização
+- [ ] **Trabalho, Produção e Desigualdade Social** 🔥
+  - [ ] Divisão social do trabalho, precarização, uberização, terceirização e desemprego estrutural/conjuntural
+  - [ ] Estratificação social (castas, estamentos e classes sociais) e mobilidade social
+  - [ ] Desigualdades de renda, raça e gênero no Brasil
+- [ ] **Poder, Estado, Política e Cidadania** 🔥
+  - [ ] Conceitos de Poder, Política e Estado Moderno
+  - [ ] Democracia direta, representativa e participativa
+  - [ ] Cidadania (direitos civis, políticos e sociais — T. H. Marshall) e Direitos Humanos
+  - [ ] Movimentos sociais (tradicionais e novos movimentos sociais: operário, feminista, negro, indígena, LGBTQIA+, ambientalista, MST, MTST)
+- [ ] **Sociologia Contemporânea e Brasileira** 🔥
+  - [ ] Pierre Bourdieu ( *habitus*, campo, capital cultural, social e simbólico, violência simbólica)
+  - [ ] Zygmunt Bauman (modernidade líquida, consumo e relações sociais)
+  - [ ] Manuel Castells (sociedade em rede) e Ulrich Beck (sociedade de risco)
+  - [ ] Pensadores do Brasil: Gilberto Freyre (*Casa-Grande & Senzala*, mito da democracia racial), Sérgio Buarque de Holanda (*Raízes do Brasil*, homem cordial, patrimonialismo), Caio Prado Jr., Raymundo Faoro, Florestan Fernandes, Darcy Ribeiro (*O Povo Brasileiro*), Milton Santos, Lélia Gonzalez, Sueli Carneiro e Ailton Krenak
+
+---
+
+## 4. Ciências da Natureza e suas Tecnologias
+
+### 4.1 Biologia
+- [ ] **Ecologia e Meio Ambiente** 🔥 *(Tema nº 1 da Biologia no ENEM)*
+  - [ ] Conceitos básicos: hábitat, nicho ecológico, população, comunidade, ecossistema e biosfera
+  - [ ] Cadeias e teias alimentares, níveis tróficos e pirâmides ecológicas (números, biomassa e energia)
+  - [ ] Fluxo de energia e produtividade nos ecossistemas
+  - [ ] Ciclos biogeoquímicos: água, carbono, oxigênio, nitrogênio (fixação, nitrificação, desnitrificação) e fósforo
+  - [ ] Relações ecológicas intraespecíficas e interespecíficas (harmônicas e desarmônicas: mutualismo, protocooperação, comensalismo, inquilinismo, competição, predação, parasitismo, amensalismo)
+  - [ ] Dinâmica de populações e Sucessão ecológica (primária, secundária, espécies pioneiras, comunidade clímax)
+  - [ ] Biomas mundiais e brasileiros (adaptações morfofisiológicas da fauna e flora, ex.: xeromorfismo na Caatinga e Cerrado, manguezais)
+  - [ ] Impactos ambientais e soluções: eutrofização, magnificação trófica (bioacumulação), efeito estufa, chuva ácida, inversão térmica, desmatamento, perda de biodiversidade, espécies exóticas invasoras, controle biológico, biorremediação e tratamento de resíduos/esgoto
+- [ ] **Bioquímica e Citologia** 🔥
+  - [ ] Compostos inorgânicos: água e sais minerais
+  - [ ] Compostos orgânicos: carboidratos, lipídios, proteínas, enzimas (fatores que alteram a atividade enzimática), vitaminas e ácidos nucleicos (DNA e RNA)
+  - [ ] Teoria celular, células procariontes vs. eucariontes (animal e vegetal)
+  - [ ] Membrana plasmática, especializações e transportes celulares (difusão simples, difusão facilitada, osmose em células animais e vegetais, transporte ativo, endocitose e exocitose)
+  - [ ] Citoplasma e organelas citoplasmáticas (ribossomos, retículo endoplasmático, complexo de Golgi, lisossomos, peroxissomos, centríolos, cloroplastos e mitocôndrias — teoria da endossimbiose)
+  - [ ] Bioenergética celular: Respiração celular aeróbia (glicólise, ciclo de Krebs, cadeia respiratória), Fermentação (lática e alcoólica), Fotossíntese (fases clara e escura, fatores limitantes) e Quimiossíntese
+  - [ ] Núcleo celular, cromossomos, duplicação semiconservativa do DNA, transcrição, código genético e tradução (síntese proteica)
+  - [ ] Ciclo celular e Divisão celular: Mitose e Meiose (gametogênese, *crossing-over*, disjunção cromossômica)
+- [ ] **Genética e Biotecnologia** 🔥
+  - [ ] Conceitos básicos de genética, 1ª Lei de Mendel, heredogramas e cruzamento-teste
+  - [ ] Variações da 1ª Lei: dominância incompleta, codominância, genes letais, alelos múltiplos (polialelia) e Sistemas Sanguíneos (ABO, fator Rh e eritroblastose fetal)
+  - [ ] 2ª Lei de Mendel (segregação independente), Interação gênica (epistasia e herança quantitativa) e *Linkage* (ligação gênica)
+  - [ ] Genética do sexo (herança ligada, restrita e influenciada pelo sexo; daltonismo e hemofilia)
+  - [ ] Mutações gênicas e cromossômicas (numéricas: aneuploidias — Down, Turner, Klinefelter — e euploidias; estruturais)
+  - [ ] Biotecnologia e Engenharia Genética: enzimas de restrição, DNA recombinante, transgênicos vs. melhoramento genético, clonagem, células-tronco, PCR, eletroforese (teste de paternidade/identificação forense), terapia gênica, edição genética (CRISPR-Cas9) e vacinas de RNAm
+- [ ] **Origem da Vida e Evolução** 🔥
+  - [ ] Origem da vida: abiogênese vs. biogênese (Redi, Pasteur), hipóteses sobre a origem da vida (Oparin e Haldane, experimento de Miller) e evolução do metabolismo
+  - [ ] Evidências da evolução: fósseis, órgãos homólogos (divergência adaptativa / irradiação) vs. órgãos análogos (convergência adaptativa), órgãos vestigiais e embriologia/bioquímica comparada
+  - [ ] Teorias evolutivas: Lamarckismo (uso e desuso, transmissão dos caracteres adquiridos), Darwinismo (seleção natural, resistência de bactérias a antibióticos e de pragas a inseticidas) e Teoria Sintética da Evolução / Neodarwinismo (mutação, recombinação gênica, seleção natural, deriva genética e fluxo gênico)
+  - [ ] Especiação (alopátrica e simpátrica) e isolamentos reprodutivos
+  - [ ] Genética de populações (Equilíbrio de Hardy-Weinberg) e Evolução humana
+- [ ] **Fisiologia Humana e Saúde Pública** 🔥
+  - [ ] Histologia básica (tecidos epitelial, conjuntivo, muscular e nervoso) e Embriologia básica (anexos embrionários)
+  - [ ] Sistema Digestório (órgãos, enzimas digestivas e pH de atuação)
+  - [ ] Sistema Respiratório (hematose, transporte de gases, movimentos respiratórios e intoxicação por CO)
+  - [ ] Sistema Cardiovascular/Circulatório (coração, pequena e grande circulação, vasos sanguíneos, componentes do sangue e coagulação)
+  - [ ] Sistema Excretor/Urinário (néfron, formação da urina, regulação pelo ADH e aldosterona)
+  - [ ] Sistema Nervoso (neurônio, impulso nervoso, bomba de sódio e potássio, sinapse, SNC e SNP, simpático vs. parassimpático)
+  - [ ] Sistema Endócrino (hipófise, tireoide, paratireoides, pâncreas — insulina e glucagon / diabetes —, suprarrenais e gônadas; mecanismos de *feedback* negativo)
+  - [ ] Sistema Imunológico: imunidade inata e adaptativa, resposta primária e secundária, imunização ativa (vacinas) vs. passiva (soros e anticorpos maternos)
+  - [ ] Sistema Reprodutor, ciclo menstrual (FSH, LH, estrogênio e progesterona) e métodos contraceptivos
+  - [ ] Programas de Saúde e Parasitologia (profilaxia, vetores e agentes etiológicos):
+    - [ ] Viroses (Dengue, Zika, Chikungunya, Febre Amarela, HIV/AIDS, HPV, Gripe, Covid-19, Raiva, Poliomielite, Sarampo)
+    - [ ] Bacterioses (Tuberculose, Hanseníase, Tétano, Cólera, Leptospirose, Sífilis, Botulismo, Febre Maculosa, Meningite)
+    - [ ] Protozooses (Doença de Chagas, Malária, Leishmaniose, Amebíase, Giardíase, Toxoplasmose)
+    - [ ] Verminoses (Esquistossomose, Teníase e Cisticercose, Ascaridíase, Ancilostomose/Amarelão, Filariose/Elefantíase, Enterobíase)
+- [ ] **Seres Vivos: Microbiologia, Botânica e Zoologia**
+  - [ ] Taxonomia, Sistemática Filogenética (cladogramas) e Reinos dos Seres Vivos
+  - [ ] Vírus (estrutura, ciclos lítico e lisogênico, retrovírus), Reino Monera (bactérias e cianobactérias), Reino Protista (algas e protozoários) e Reino Fungi (fungos, fermentação, micorrizas e líquens)
+  - [ ] Botânica — Grupos vegetais e evolução (Briófitas, Pteridófitas, Gimnospermas e Angiospermas; alternância de gerações, conquista do ambiente terrestre, polinização e dispersão de sementes)
+  - [ ] Botânica — Histologia e Fisiologia Vegetal (xilema e floema, condução de seiva bruta e elaborada, transpiração e estômatos, fitormônios — auxinas, giberelinas, etileno, ácido abscísico — e fotoperiodismo/tropismos)
+  - [ ] Zoologia — Invertebrados (Poríferos, Cnidários, Platelmintos, Nematelmintos, Moluscos, Anelídeos, Artrópodes, Equinodermos) e Cordados/Vertebrados (Peixes, Anfíbios, Répteis, Aves e Mamíferos: fisiologia comparada, circulação, respiração, excreção nitrogenada e regulação térmica)
+
+### 4.2 Química
+- [ ] **Química Geral e Inorgânica** 🔥
+  - [ ] Propriedades da matéria, estados físicos, mudanças de estado e diagramas de aquecimento/fases
+  - [ ] Substâncias puras (simples e compostas), misturas (homogêneas, heterogêneas, eutéticas e azeotrópicas)
+  - [ ] Processos de separação de misturas 🔥 (filtração, decantação, centrifugação, flotação, dissolução fracionada, destilação simples e fracionada, extração por solvente, cromatografia) e tratamento de água (ETA) e esgoto (ETE)
+  - [ ] Modelos atômicos (Dalton, Thomson, Rutherford, Bohr e modelo quântico), estrutura atômica, íons, isótopos, isóbaros e isótonos, distribuição eletrônica
+  - [ ] Tabela Periódica e propriedades periódicas (raio atômico, energia de ionização, afinidade eletrônica, eletronegatividade, densidade)
+  - [ ] Ligações químicas (iônica, covalente e metálica; propriedades dos materiais)
+  - [ ] Geometria molecular, polaridade das ligações e das moléculas
+  - [ ] Forças / Interações intermoleculares 🔥 (dipolo induzido/forças de London, dipolo permanente, ligação de hidrogênio e íon-dipolo) e relação com ponto de ebulição, volatilidade, tensão superficial, viscosidade e solubilidade ("semelhante dissolve semelhante", ação de sabões e detergentes)
+  - [ ] Número de oxidação (NOx) e reações de oxirredução
+  - [ ] Funções inorgânicas (Ácidos, Bases, Sais e Óxidos: nomenclatura, força, propriedades e aplicações cotidianas — calagem do solo, acidez estomacal, óxidos ácidos/chuva ácida)
+  - [ ] Reações inorgânicas (síntese, decomposição, simples troca/fila de reatividade, dupla troca e neutralização)
+  - [ ] Leis ponderais (Lavoisier e Proust), Grandezas químicas (massa atômica, massa molecular, mol, constante de Avogadro, massa molar, volume molar) e Cálculo Estequiométrico 🔥 (casos gerais, excesso e limitante, pureza dos reagentes, rendimento da reação e reações consecutivas)
+- [ ] **Físico-Química** 🔥
+  - [ ] Estudo dos Gases (transformações gasosas, equação de Clapeyron, misturas gasosas e difusão/efusão)
+  - [ ] Soluções: classificação, coeficiente e curvas de solubilidade
+  - [ ] Unidades de concentração 🔥 (concentração comum, título/porcentagem em massa e volume, ppm/ppb, concentração em quantidade de matéria/molaridade, densidade), diluição, mistura de soluções (com e sem reação química) e titulação ácido-base
+  - [ ] Propriedades coligativas (tonoscopia, ebulioscopia, crioscopia e osmoscopia/osmose reversa)
+  - [ ] Termoquímica 🔥: processos endotérmicos e exotérmicos, entalpia de formação, de combustão (poder calorífico dos combustíveis), energia de ligação e Lei de Hess
+  - [ ] Cinética Química: velocidade média de reação, teoria das colisões, energia de ativação, fatores que alteram a velocidade (superfície de contato, temperatura, concentração, pressão e catalisador) e lei da velocidade
+  - [ ] Equilíbrio Químico 🔥: constantes $K_c$ e $K_p$, grau de equilíbrio e deslocamento de equilíbrio (Princípio de Le Chatelier)
+  - [ ] Equilíbrio Iônico: constantes $K_a$ e $K_b$, autoionização da água ($K_w$), escala de pH e pOH, indicadores ácido-base, hidrólise salina (caráter ácido, básico ou neutro dos sais), solução-tampão (ex.: tampão sanguíneo) e equilíbrio de solubilidade ($K_{ps}$)
+  - [ ] Eletroquímica 🔥: reações redox, potencial de redução, Pilhas / Células Galvânicas (Pilha de Daniell, cálculo da ddp $\Delta E^\circ$, espontaneidade), corrosão e proteção catódica (metal de sacrifício), Eletrólise ígnea e aquosa, e estequiometria da eletrólise (Leis de Faraday)
+  - [ ] Radioatividade e Química Nuclear: emissões alfa ($\alpha$), beta ($\beta$) e gama ($\gamma$), leis da radioatividade, tempo de meia-vida / decaimento radioativo (datação por carbono-14), fissão nuclear vs. fusão nuclear e aplicações médicas/energéticas
+- [ ] **Química Orgânica e Ambiental** 🔥
+  - [ ] Características do carbono, hibridização ($sp^3, sp^2, sp$), ligações sigma ($\sigma$) e pi ($\pi$), classificação das cadeias carbônicas e fórmulas estruturais (bastão/linha)
+  - [ ] Reconhecimento e nomenclatura das Funções Orgânicas 🔥: Hidrocarbonetos (alcanos, alcenos, alcinos, alcadienos, ciclanos, aromáticos; petróleo e craqueamento), Funções Oxigenadas (álcool, fenol, enol, éter, aldeído, cetona, ácido carboxílico, éster e sal orgânico), Funções Nitrogenadas (amina, amida, nitrocomposto, nitrila) e Haletos orgânicos
+  - [ ] Isomeria Plana (função, cadeia, posição, metameria/compensação e tautomeria) e Isomeria Espacial (geométrica *cis-trans* / *E-Z* e óptica — carbono quiral/assimétrico, enantiômeros e diastereoisômeros)
+  - [ ] Propriedades físicas e químicas dos compostos orgânicos 🔥: pontos de fusão e ebulição, solubilidade em água e em lipídios (vitaminas hidrossolúveis vs. lipossolúveis), caráter ácido (álcoois, fenóis e ácidos carboxílicos) e caráter básico (aminas)
+  - [ ] Reações Orgânicas 🔥: adição, substituição, eliminação, oxidação (energética, branda, ozonólise e oxidação de álcoois — bafômetro), esterificação, hidrólise, saponificação (produção de sabão) e transesterificação (produção de biodiesel)
+  - [ ] Polímeros sintéticos (adição e condensação, reciclagem, plásticos biodegradáveis) e biomoléculas
+  - [ ] Química Ambiental: poluição atmosférica, camada de ozônio (CFCs), efeito estufa, chuva ácida, química verde, matriz energética e biocombustíveis (etanol, biogás e biodiesel)
+
+### 4.3 Física
+- [ ] **Mecânica — Cinemática** 🔥
+  - [ ] Ordem de grandeza, Sistema Internacional de Unidades (SI), análise dimensional, escalares e vetores
+  - [ ] Velocidade escalar média e aceleração escalar média
+  - [ ] Movimento Uniforme (MU) e Movimento Uniformemente Variado (MUV), equação de Torricelli e leitura de gráficos ($s \times t$, $v \times t$, $a \times t$)
+  - [ ] Queda livre, lançamento vertical, lançamento horizontal e lançamento oblíquo
+  - [ ] Movimento Circular Uniforme (MCU): período, frequência, velocidade linear e angular, aceleração centrípeta e transmissão de movimento (polias, correias e engrenagens)
+- [ ] **Mecânica — Dinâmica, Energia, Estática e Hidrostática** 🔥
+  - [ ] Leis de Newton (Inércia, Princípio Fundamental $F_R = m \cdot a$, Ação e Reação)
+  - [ ] Forças especiais: Peso, Normal, Tração, Força Elástica (Lei de Hooke), Força de Atrito (estático e dinâmico; freios ABS) e Resultante Centrípeta
+  - [ ] Trabalho de uma força, Potência mecânica e Rendimento
+  - [ ] Energia Cinética, Energia Potencial (gravitacional e elástica), Teorema da Energia Cinética e Conservação/Dissipação da Energia Mecânica
+  - [ ] Impulso, Quantidade de Movimento (Momento Linear), Teorema do Impulso (airbag, para-choques) e Conservação da Quantidade de Movimento (colisões elásticas, parcialmente elásticas e inelásticas)
+  - [ ] Estática do ponto material e do corpo extenso (torque/momento de uma força, alavancas e centro de massa)
+  - [ ] Gravitação Universal (Leis de Kepler e Lei da Gravitação de Newton, marés e satélites em órbita)
+  - [ ] Hidrostática 🔥: densidade e massa específica, pressão, Teorema de Stevin (vasos comunicantes), Princípio de Pascal (prensa hidráulica) e Princípio de Arquimedes (Empuxo e flutuação)
+- [ ] **Termologia, Calorimetria e Termodinâmica** 🔥
+  - [ ] Temperatura, equilíbrio térmico e escalas termométricas (Celsius, Fahrenheit e Kelvin)
+  - [ ] Dilatação térmica dos sólidos (linear, superficial e volumétrica; lâminas bimetálicas) e dos líquidos (comportamento anômalo da água)
+  - [ ] Calorimetria 🔥: capacidade térmica, calor específico, calor sensível ($Q = m \cdot c \cdot \Delta T$), calor latente ($Q = m \cdot L$), curvas de aquecimento e trocas de calor sem perda para o meio
+  - [ ] Propagação de calor 🔥: condução, convecção (brisas marítimas, geladeira, ar-condicionado) e irradiação térmica (garrafa térmica, estufa)
+  - [ ] Estudo dos Gases Ideais e Termodinâmica 🔥: trabalho em transformações gasosas, energia interna, 1ª Lei da Termodinâmica (transformações isotérmica, isobárica, isovolumétrica/isocórica e adiabática), 2ª Lei da Termodinâmica, máquinas térmicas, Ciclo de Carnot, refrigeradores e entropia
+- [ ] **Ondulatória e Acústica** 🔥 *(Altíssima incidência no ENEM)*
+  - [ ] Movimento Harmônico Simples (MHS): pêndulo simples e sistema massa-mola
+  - [ ] Classificação das ondas (mecânicas vs. eletromagnéticas; longitudinais vs. transversais; unidimensionais, bidimensionais e tridimensionais), espectro eletromagnético e aplicações cotidianas
+  - [ ] Elementos da onda (amplitude, comprimento de onda $\lambda$, período $T$, frequência $f$) e Equação Fundamental da Ondulatória ($v = \lambda \cdot f$)
+  - [ ] Fenômenos ondulatórios 🔥: reflexão, refração, difração, interferência (construtiva e destrutiva; cancelamento de ruído), polarização, ressonância (forno de micro-ondas, quebra de taças, pontes) e efeito Doppler
+  - [ ] Acústica 🔥: velocidade do som nos meios, eco e reverberação, qualidades fisiológicas do som (altura = frequência/grave-agudo; intensidade = amplitude/forte-fraco e nível sonoro em decibéis; timbre = formato da onda), cordas vibrantes e tubos sonoros (ondas estacionárias e harmônicos)
+- [ ] **Óptica Geométrica** 🔥
+  - [ ] Princípios da óptica geométrica, sombra, penumbra, eclipses, câmara escura e cor de um corpo por reflexão
+  - [ ] Reflexão da luz: espelhos planos e espelhos esféricos (côncavo e convexo: formação de imagens e aplicações — retrovisores, espelho de maquiagem, telescópios)
+  - [ ] Refração da luz: índice de refração, Lei de Snell-Descartes, dioptro plano (posição aparente), reflexão total e ângulo limite (fibra óptica e miragem), dispersão luminosa (arco-íris e prismas)
+  - [ ] Lentes esféricas (convergentes e divergentes, equação de Gauss e aumento linear) e Óptica da Visão 🔥 (olho humano e correção de ametropias: miopia, hipermetropia, presbiopia e astigmatismo)
+- [ ] **Eletricidade e Magnetismo** 🔥 *(Altíssima incidência no ENEM)*
+  - [ ] Eletrostática: carga elétrica, condutores e isolantes, processos de eletrização (atrito, contato e indução), Lei de Coulomb, campo elétrico, potencial elétrico e blindagem eletrostática (Gaiola de Faraday)
+  - [ ] Eletrodinâmica — Corrente e Resistores 🔥: corrente elétrica (contínua e alternada), tensão/ddp, 1ª e 2ª Leis de Ohm ($U = R \cdot i$ e $R = \rho \cdot \frac{L}{A}$), efeito Joule, Potência elétrica ($P = U \cdot i = R \cdot i^2 = \frac{U^2}{R}$) e Consumo de Energia Elétrica ($E = P \cdot \Delta t$ em $\text{kWh}$, dimensionamento de disjuntores e chuveiro elétrico)
+  - [ ] Eletrodinâmica — Circuitos Elétricos 🔥: associação de resistores em série, paralelo e mista, curto-circuito, ponte de Wheatstone, instrumentos de medidas elétricas (amperímetro e voltímetro), Geradores e Receptores elétricos, Leis de Kirchhoff e Capacitores
+  - [ ] Eletromagnetismo 🔥: ímãs e campo magnético terrestre, campo magnético gerado por corrente elétrica (fio retilíneo, espira e solenoide/eletroímã), força magnética sobre cargas e fios condutores, Indução Eletromagnética (Fluxo magnético, Lei de Faraday-Neumann e Lei de Lenz — usinas hidrelétricas/eólicas, freio magnético, carregador por indução) e Transformadores de tensão
+- [ ] **Física Moderna**
+  - [ ] Quantização da energia (Planck), efeito fotoelétrico (Einstein; células solares e sensores), dualidade onda-partícula e noções de Relatividade Restrita
+
+---
+
+## 5. Matemática e suas Tecnologias
+
+### 5.1 Matemática Básica e Aritmética *(Base de 40%+ da prova)*
+- [ ] **Sistemas de Numeração e Operações** 🔥
+  - [ ] Sistema de numeração decimal, operações fundamentais, critérios de divisibilidade, MMC e MDC (problemas de ciclos e encontros)
+  - [ ] Frações, números decimais, dízimas periódicas e operações
+  - [ ] Potenciação, radiciação e Notação Científica / Ordem de grandeza
+- [ ] **Sistema Métrico e Conversão de Unidades** 🔥
+  - [ ] Unidades de comprimento, área, volume, massa e tempo
+  - [ ] Relação fundamental entre volume e capacidade ($1\text{ m}^3 = 1\,000\text{ L}$, $1\text{ dm}^3 = 1\text{ L}$, $1\text{ cm}^3 = 1\text{ mL}$)
+- [ ] **Razão, Proporção e Escalas** 🔥
+  - [ ] Razões especiais (velocidade média, densidade demográfica, densidade de um corpo, vazão)
+  - [ ] Grandezas diretamente e inversamente proporcionais e divisão proporcional
+  - [ ] Escalas lineares, superficiais ($E^2$) e volumétricas ($E^3$) — maquetes, plantas e mapas
+  - [ ] Regra de três simples e composta
+- [ ] **Porcentagem e Matemática Financeira** 🔥
+  - [ ] Cálculo de porcentagens, razão percentual e variação percentual
+  - [ ] Aumentos e descontos sucessivos (fatores multiplicativos)
+  - [ ] Lucro, prejuízo, impostos e inflação
+  - [ ] Juros Simples e Juros Compostos (equivalência de taxas e sistemas de amortização básicos)
+
+### 5.2 Conjuntos, Álgebra e Funções
+- [ ] **Conjuntos e Álgebra Básica**
+  - [ ] Teoria dos conjuntos, operações (união, interseção, diferença) e Diagramas de Venn
+  - [ ] Conjuntos numéricos ($\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{I}, \mathbb{R}$) e intervalos reais
+  - [ ] Produtos notáveis, fatoração algébrica, equações e inequações de 1º e 2º graus
+  - [ ] Sistemas de equações lineares (interpretação e resolução de problemas)
+- [ ] **Estudo Geral das Funções e Interpretação de Gráficos** 🔥
+  - [ ] Domínio, contradomínio, imagem, crescimento/decrescimento, máximos/mínimos, taxa de variação e leitura de gráficos
+- [ ] **Função Afim (1º Grau)** 🔥
+  - [ ] Lei de formação $f(x) = ax + b$, significado dos coeficientes angular ($a$) e linear ($b$), raiz, estudo do sinal e modelagem de problemas lineares (custo fixo + custo variável)
+- [ ] **Função Quadrática (2º Grau)** 🔥
+  - [ ] Lei de formação $f(x) = ax^2 + bx + c$, raízes, concavidade, Vértice da parábola ($x_v = -\frac{b}{2a}$ e $y_v = -\frac{\Delta}{4a}$) e problemas de otimização (lucro máximo, área máxima, altura máxima)
+- [ ] **Função Modular e Função Definida por Mais de uma Sentença**
+- [ ] **Função Exponencial e Logarítmica** 🔥
+  - [ ] Equações e funções exponenciais (crescimento populacional, meia-vida, juros compostos, contágio)
+  - [ ] Definição e propriedades operatórias dos Logaritmos, mudança de base, equações e funções logarítmicas (escala Richter, decibéis, pH)
+- [ ] **Sequências Numéricas** 🔥
+  - [ ] Padrões numéricos e figurais (sequências recursivas e ciclos de repetição)
+  - [ ] Progressão Aritmética (PA): termo geral, interpolação e soma dos termos
+  - [ ] Progressão Geométrica (PG): termo geral, soma dos termos finitos e série geométrica infinita
+
+### 5.3 Geometria Plana, Espacial, Analítica e Trigonometria
+- [ ] **Geometria Plana** 🔥
+  - [ ] Ângulos, retas paralelas cortadas por transversal e Teorema de Tales
+  - [ ] Triângulos: condição de existência, soma dos ângulos internos, pontos notáveis (baricentro, incentro, circuncentro, ortocentro), congruência e Semelhança de Triângulos
+  - [ ] Relações métricas no triângulo retângulo e Teorema de Pitágoras
+  - [ ] Quadriláteros notáveis (trapézio, paralelogramo, retângulo, losango, quadrado)
+  - [ ] Polígonos regulares (soma dos ângulos internos e externos, diagonais, inscrição e circunscrição)
+  - [ ] Circunferência e círculo: comprimento ($C = 2\pi R$), arcos, ângulos na circunferência e posições relativas
+  - [ ] Áreas de figuras planas 🔥 (triângulos, quadriláteros, hexágono regular, círculo, setor circular, coroa circular e áreas sombreadas) e razão de semelhança entre áreas
+- [ ] **Trigonometria** 🔥
+  - [ ] Razões trigonométricas no triângulo retângulo ($\text{sen}, \cos, \text{tg}$) e ângulos notáveis ($30^\circ, 45^\circ, 60^\circ$)
+  - [ ] Lei dos Senos e Lei dos Cossenos
+  - [ ] Ciclo trigonométrico (graus e radianos, redução ao 1º quadrante)
+  - [ ] Funções Trigonométricas 🔥 ($f(x) = a + b \cdot \text{sen}(cx + d)$ e $f(x) = a + b \cdot \cos(cx + d)$: período, imagem, amplitude e deslocamento em fenômenos periódicos como marés, temperatura e roda-gigante)
+- [ ] **Geometria Espacial e Visão Espacial** 🔥 *(Altíssima incidência no ENEM)*
+  - [ ] Visão espacial, planificação de sólidos, simetria/rotação e Projeção Ortogonal sobre o plano 🔥
+  - [ ] Poliedros convexos, Poliedros de Platão e Relação de Euler ($V - A + F = 2$)
+  - [ ] Prismas (cubo, paralelepípedo reto-retângulo, prisma hexagonal): área lateral, área total, volume e diagonal
+  - [ ] Pirâmides e tetraedro regular: apótema, área e volume ($V = \frac{1}{3} A_b \cdot h$)
+  - [ ] Cilindros (reto e equilátero): planificação, área e volume ($V = \pi R^2 \cdot h$)
+  - [ ] Cones (reto e equilátero): geratriz, setor circular da planificação, área e volume ($V = \frac{1}{3} \pi R^2 \cdot h$)
+  - [ ] Esfera e partes da esfera: área da superfície ($A = 4\pi R^2$), volume ($V = \frac{4}{3}\pi R^3$), fuso e cunha esférica
+  - [ ] Tronco de pirâmide e tronco de cone (semelhança de sólidos: $\frac{v}{V} = k^3$) e inscrição/circunscrição de sólidos
+- [ ] **Geometria Analítica e Matrizes**
+  - [ ] Plano cartesiano, distância entre dois pontos, ponto médio e baricentro
+  - [ ] Estudo analítico da reta (coeficiente angular, equações da reta, retas paralelas e perpendiculares)
+  - [ ] Equação reduzida e geral da circunferência ($(x - x_c)^2 + (y - y_c)^2 = R^2$)
+  - [ ] Matrizes (construção, leitura de tabelas matriciais, adição e multiplicação de matrizes)
+
+### 5.4 Estatística, Análise Combinatória e Probabilidade
+- [ ] **Estatística** 🔥 *(Tema garantido em toda prova do ENEM)*
+  - [ ] Leitura, interpretação e cruzamento de dados em tabelas e gráficos (barras, colunas, setores, linhas, radar, histogramas)
+  - [ ] Medidas de Tendência Central 🔥: Média Aritmética Simples, Média Aritmética Ponderada, Mediana (dados pares, ímpares e em tabelas de frequência) e Moda
+  - [ ] Medidas de Dispersão: Amplitude, Variância e Desvio-Padrão (interpretação de regularidade/homogeneidade)
+- [ ] **Análise Combinatória** 🔥
+  - [ ] Princípio Fundamental da Contagem (PFC / princípio multiplicativo e aditivo)
+  - [ ] Fatorial e Permutação Simples ($P_n = n!$), Permutação com Repetição e Permutação Circular ($PC_n = (n-1)!$)
+  - [ ] Arranjo Simples ($A_{n,p} = \frac{n!}{(n-p)!}$) vs. Combinação Simples ($C_{n,p} = \frac{n!}{p!(n-p)!}$) e problemas integrados de contagem
+- [ ] **Probabilidade** 🔥
+  - [ ] Espaço amostral, evento e definição clássica de probabilidade ($P(A) = \frac{n(A)}{n(\Omega)}$)
+  - [ ] Probabilidade do evento complementar ($P(\bar{A}) = 1 - P(A)$) e Probabilidade da união de dois eventos ($P(A \cup B) = P(A) + P(B) - P(A \cap B)$)
+  - [ ] Probabilidade Condicional ($P(A|B) = \frac{P(A \cap B)}{P(B)}$)
+  - [ ]Multiplicação de probabilidades, eventos independentes e Distribuição Binomial de Probabilidade (tentativas repetidas)

@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist ENEM 2026 — Painel de Estudos</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root {
+      --background: #0f172a;
+      --card: #1e293b;
+      --foreground: #f8fafc;
+      --muted-foreground: #94a3b8;
+      --border: #334155;
+      --primary: #3b82f6;
+      --primary-foreground: #ffffff;
+    }
+    html.light {
+      --background: #f8fafc;
+      --card: #ffffff;
+      --foreground: #0f172a;
+      --muted-foreground: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-foreground: #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-6">
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Header & Global Progress -->
+    <header class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[var(--primary)] text-[var(--primary-foreground)]">ENEM 2026</span>
+            <span id="save-indicator" class="text-xs text-[var(--muted-foreground)]">Salvo automaticamente</span>
+          </div>
+          <h1 class="text-xl md:text-2xl font-bold text-[var(--foreground)] mt-1">Checklist Sequencial de Estudos</h1>
+          <p class="text-sm text-[var(--muted-foreground)]">Estude um assunto por vez, marque como concluído e avance automaticamente para o próximo.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="btn-export" class="px-3 py-1.5 text-xs font-medium rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] hover:opacity-80 transition">
+            Exportar Backup (.json)
+          </button>
+          <label class="px-3 py-1.5 text-xs font-medium rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] hover:opacity-80 transition cursor-pointer">
+            Importar Backup
+            <input type="file" id="input-import" accept=".json" class="hidden" />
+          </label>
+          <button id="btn-reset" class="px-3 py-1.5 text-xs font-medium rounded-lg border border-[var(--border)] text-[var(--muted-foreground)] hover:text-red-500 transition">
+            Zerar Progresso
+          </button>
+        </div>
+      </div>
+
+      <!-- Overall Progress Bar -->
+      <div class="mt-5 pt-4 border-t border-[var(--border)]">
+        <div class="flex items-center justify-between text-sm mb-2">
+          <span class="font-medium text-[var(--foreground)]">Progresso Geral do Edital</span>
+          <span id="overall-stats" class="font-semibold text-[var(--foreground)]">0 / 0 concluídos (0%)</span>
+        </div>
+        <div class="w-full h-3 bg-[var(--background)] border border-[var(--border)] rounded-full overflow-hidden">
+          <div id="overall-bar" class="h-full bg-[var(--primary)] transition-all duration-300" style="width: 0%"></div>
+        </div>
+
+        <!-- Area Mini Progress Cards -->
+        <div id="area-summary-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-4"></div>
+      </div>
+    </header>
+
+    <!-- "Up Next" Sequential Study Card -->
+    <section class="bg-[var(--card)] border-2 border-[var(--primary)] rounded-xl p-5 shadow-sm">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--primary)]">Assunto Atual da Fila</span>
+            <span id="next-area-badge" class="text-xs px-2 py-0.5 rounded bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]"></span>
+            <span id="next-hot-badge" class="hidden text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-500 font-semibold">🔥 Alta Incidência</span>
+          </div>
+          <h2 id="next-topic-title" class="text-lg font-bold text-[var(--foreground)]">Carregando...</h2>
+          <p id="next-topic-group" class="text-sm text-[var(--muted-foreground)]"></p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 shrink-0">
+          <button id="btn-complete-next" class="px-4 py-2.5 rounded-lg text-sm font-semibold bg-[var(--primary)] text-[var(--primary-foreground)] hover:opacity-90 transition shadow-sm">
+            ✓ Concluir e Ir para o Próximo
+          </button>
+          <button id="btn-skip-next" class="px-3 py-2.5 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] hover:opacity-80 transition">
+            Pular por enquanto →
+          </button>
+          <button id="btn-locate-next" class="px-3 py-2.5 rounded-lg text-xs font-medium border border-[var(--border)] bg-[var(--background)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">
+            Ver na lista
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Controls -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm space-y-4">
+      <!-- Area Tabs -->
+      <div id="area-tabs" class="flex flex-wrap gap-2 border-b border-[var(--border)] pb-3"></div>
+
+      <!-- Subject Pills (Dynamic based on selected area) -->
+      <div id="subject-pills" class="flex flex-wrap gap-1.5"></div>
+
+      <!-- Search, Status Filter, Priority Filter -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
+        <div class="sm:col-span-2">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar assunto (ex: Ecologia, Eletrodinâmica, Vargas, Funções...)"
+            class="w-full px-3.5 py-2 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder-[var(--muted-foreground)] focus:outline-none focus:border-[var(--primary)]"
+          />
+        </div>
+
+        <div>
+          <select id="status-filter" class="w-full px-3 py-2 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-none focus:border-[var(--primary)]">
+            <option value="all">Status: Todos os assuntos</option>
+            <option value="pending">Apenas Pendentes</option>
+            <option value="done">Apenas Concluídos</option>
+            <option value="review">Marcados para Revisão</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)]">
+          <label for="hot-filter" class="text-sm text-[var(--foreground)] cursor-pointer select-none">
+            Apenas 🔥 Mais Cobrados
+          </label>
+          <input type="checkbox" id="hot-filter" class="w-4 h-4 accent-[var(--primary)] cursor-pointer" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist Content -->
+    <main id="checklist-container" class="space-y-4"></main>
+
+  </div>
+
+  <script>
+    // Complete Curriculum Database for ENEM 2026
+    const ENEM_DATA = [
+      {
+        id: "linguagens",
+        area: "Linguagens e Códigos",
+        shortName: "Linguagens",
+        subjects: [
+          {
+            id: "portugues",
+            name: "Língua Portuguesa",
+            groups: [
+              {
+                title: "Interpretação e Compreensão Textual",
+                hot: true,
+                items: [
+                  "Inferência, pressuposto e subentendido",
+                  "Informações explícitas vs. implícitas",
+                  "Ironia, ambiguidade, humor e duplo sentido (tirinhas, charges e cartuns)",
+                  "Textos multimodais / mistos (linguagem verbal e não verbal)"
+                ]
+              },
+              {
+                title: "Gêneros e Tipologias Textuais",
+                hot: true,
+                items: [
+                  "Tipos textuais: narração, descrição, dissertação, injunção e exposição",
+                  "Gêneros jornalísticos: notícia, reportagem, editorial, artigo de opinião, crônica",
+                  "Gêneros publicitários: anúncio, campanha comunitária/institucional, propaganda",
+                  "Gêneros digitais: post, blog, comentário, meme, hipertexto",
+                  "Gêneros epistolares, científicos e normativos (carta, divulgação científica, estatuto)"
+                ]
+              },
+              {
+                title: "Funções da Linguagem",
+                hot: true,
+                items: [
+                  "Função referencial (denotativa/informativa)",
+                  "Função emotiva (expressiva)",
+                  "Função conativa (apelativa)",
+                  "Função fática",
+                  "Função metalinguística",
+                  "Função poética"
+                ]
+              },
+              {
+                title: "Variação Linguística e Sociolinguística",
+                hot: true,
+                items: [
+                  "Variação diatópica (regional/geográfica)",
+                  "Variação diastrática (social/gírias/jargões)",
+                  "Variação diafásica (situacional/registro formal vs. informal)",
+                  "Variação diacrônica (histórica)",
+                  "Norma-padrão vs. variedades não padrão e preconceito linguístico",
+                  "Língua falada vs. língua escrita (marcas de oralidade)",
+                  "Patrimônio linguístico brasileiro e línguas indígenas/afro-brasileiras"
+                ]
+              },
+              {
+                title: "Semântica e Estilística (Figuras de Linguagem)",
+                hot: true,
+                items: [
+                  "Denotação e conotação",
+                  "Polissemia, homonímia, paronímia, sinonímia e antonímia",
+                  "Figuras de palavras: metáfora, metonímia, comparação, catacrese, sinestesia",
+                  "Figuras de pensamento: antítese, paradoxo, eufemismo, ironia, hipérbole, prosopopeia, gradação",
+                  "Figuras de sintaxe: elipse, zeugma, pleonasmo, anáfora, polissíndeto, inversão (hipérbato)",
+                  "Figuras de som: aliteração, assonância, onomatopeia"
+                ]
+              },
+              {
+                title: "Coesão, Coerência e Intertextualidade",
+                hot: true,
+                items: [
+                  "Coesão referencial (anáfora, catáfora, elipse, substituição lexical)",
+                  "Coesão sequencial e operadores argumentativos (conjunções e conectivos)",
+                  "Intertextualidade explícita e implícita: citação, paráfrase, paródia, alusão, epígrafe",
+                  "Progressão temática e coerência textual"
+                ]
+              },
+              {
+                title: "Morfossintaxe Aplicada ao Sentido do Texto",
+                hot: false,
+                items: [
+                  "Formação de palavras (derivação, composição, neologismos, estrangeirismos)",
+                  "Classes de palavras e seu papel semântico (substantivo, adjetivo, verbo, advérbio, pronome)",
+                  "Tempos e modos verbais como recursos expressivos",
+                  "Vozes verbais (ativa, passiva analítica/sintética, reflexiva) e efeitos de sentido",
+                  "Coordenação e subordinação (valor semântico das orações)",
+                  "Concordância verbal e nominal",
+                  "Regência verbal, nominal e crase",
+                  "Pontuação como recurso estilístico e sintático"
+                ]
+              }
+            ]
+          },
+          {
+            id: "literatura",
+            name: "Literatura",
+            groups: [
+              {
+                title: "Teoria Literária",
+                hot: false,
+                items: [
+                  "Conceito de literatura, texto literário vs. não literário",
+                  "Gêneros literários: lírico, épico/narrativo e dramático",
+                  "Elementos da narrativa (foco narrativo, espaço, tempo, personagens, discurso direto/indireto/indireto livre)",
+                  "Recursos poéticos (eu lírico, verso livre, métrica, ritmo, rima)"
+                ]
+              },
+              {
+                title: "Escolas Literárias — Era Colonial",
+                hot: false,
+                items: [
+                  "Quinhentismo (Literatura de Informação e de Catequese)",
+                  "Barroco (Gregório de Matos, Padre Antônio Vieira, cultismo e conceptismo)",
+                  "Arcadismo / Neoclassicismo (Cláudio Manuel da Costa, Tomás Antônio Gonzaga, bucolismo, carpe diem)"
+                ]
+              },
+              {
+                title: "Escolas Literárias — Século XIX",
+                hot: true,
+                items: [
+                  "Romantismo — Poesia (1ª geração indianista, 2ª ultrarromântica, 3ª condoreira/social)",
+                  "Romantismo — Prosa (romances urbanos, indianistas, regionalistas e históricos; José de Alencar)",
+                  "Realismo (Machado de Assis, crítica social, análise psicológica, ironia)",
+                  "Naturalismo (Aluísio Azevedo, determinismo, zoomorfização)",
+                  "Parnasianismo (Olavo Bilac, arte pela arte, rigor formal)",
+                  "Simbolismo (Cruz e Sousa, Alphonsus de Guimaraens, subjetivismo, musicalidade)"
+                ]
+              },
+              {
+                title: "Pré-Modernismo e Vanguardas Europeias",
+                hot: true,
+                items: [
+                  "Vanguardas Europeias: Futurismo, Cubismo, Expressionismo, Dadaísmo, Surrealismo",
+                  "Pré-Modernismo no Brasil (Euclides da Cunha, Lima Barreto, Monteiro Lobato, Augusto dos Anjos)"
+                ]
+              },
+              {
+                title: "Modernismo no Brasil",
+                hot: true,
+                items: [
+                  "Semana de Arte Moderna de 1922",
+                  "1ª Fase Modernista — Heroica (Oswald de Andrade, Mário de Andrade, Manuel Bandeira)",
+                  "2ª Fase Modernista — Poesia de 30 (Carlos Drummond de Andrade, Cecília Meireles, Vinícius de Moraes)",
+                  "2ª Fase Modernista — Prosa de 30 / Regionalismo (Graciliano Ramos, Jorge Amado, Rachel de Queiroz, Érico Veríssimo)",
+                  "3ª Fase Modernista — Geração de 45 e Prosa Intimista/Regional (Clarice Lispector, Guimarães Rosa, João Cabral de Melo Neto, Lygia Fagundes Telles)"
+                ]
+              },
+              {
+                title: "Literatura Contemporânea e Produções Marginais",
+                hot: true,
+                items: [
+                  "Concretismo, Neoconcretismo e Poesia Práxis",
+                  "Tropicália e Poesia Marginal (Geração Mimeógrafo, Paulo Leminski, Ana Cristina Cesar)",
+                  "Literatura Contemporânea (Conceição Evaristo, Carolina Maria de Jesus, Ferreira Gullar, Adélia Prado, Itamar Vieira Junior, Ailton Krenak)",
+                  "Literatura Africana de Língua Portuguesa"
+                ]
+              }
+            ]
+          },
+          {
+            id: "artes",
+            name: "Artes",
+            groups: [
+              {
+                title: "História da Arte (Antiguidade ao Século XIX)",
+                hot: false,
+                items: [
+                  "Arte Pré-Histórica (rupestre) e Arte na Antiguidade (Egípcia, Grega, Romana)",
+                  "Arte Medieval (Bizantina, Românica, Gótica)",
+                  "Renascimento Artístico e Maneirismo",
+                  "Barroco Europeu e Barroco Mineiro/Brasileiro (Aleijadinho, Mestre Ataíde)",
+                  "Missão Artística Francesa, Neoclassicismo e Romantismo nas Artes Plásticas"
+                ]
+              },
+              {
+                title: "Arte Moderna (Séculos XIX e XX)",
+                hot: true,
+                items: [
+                  "Impressionismo e Pós-Impressionismo",
+                  "Vanguardas Artísticas Europeias (Picasso, Dalí, Duchamp, Kandinsky, Munch)",
+                  "Modernismo Brasileiro nas Artes Plásticas (Tarsila do Amaral, Anita Malfatti, Di Cavalcanti, Candido Portinari, Lasar Segall)"
+                ]
+              },
+              {
+                title: "Arte Contemporânea e Patrimônio Cultural",
+                hot: true,
+                items: [
+                  "Pop Art, Op Art, Minimalismo e Arte Conceitual",
+                  "Novas linguagens: Instalação, Performance, Happening, Body Art, Videoarte, Land Art",
+                  "Arte Urbana: Grafite, Pichação, Stencil, Intervenção Urbana",
+                  "Fotografia, Cinema, Teatro e Dança como expressões artísticas",
+                  "Música Popular Brasileira (Samba, Bossa Nova, MPB, Tropicália, Rap, Hip-Hop, Funk, Regionalismos)",
+                  "Patrimônio Histórico e Cultural (Material e Imaterial, IPHAN, Cultura Afro-Brasileira e Indígena)"
+                ]
+              }
+            ]
+          },
+          {
+            id: "edfisica_tics",
+            name: "Ed. Física e TICs",
+            groups: [
+              {
+                title: "Educação Física e Cultura Corporal",
+                hot: true,
+                items: [
+                  "Esporte, lazer, inclusão social e cidadania",
+                  "Padrões estéticos, culto ao corpo, distúrbios alimentares e uso de anabolizantes",
+                  "Saúde física e mental, sedentarismo e qualidade de vida",
+                  "Jogos, lutas, danças e ginásticas como manifestações culturais",
+                  "Esporte de alto rendimento, mercantilização e questões de gênero no esporte"
+                ]
+              },
+              {
+                title: "Tecnologias da Informação e Comunicação (TICs)",
+                hot: true,
+                items: [
+                  "Impactos sociais da internet, redes sociais e cultura digital",
+                  "Fake news, pós-verdade, bolhas algorítmicas e desinformação",
+                  "Cibercultura, inclusão digital, privacidade de dados e inteligência artificial",
+                  "Linguagem digital (internetês, memes, hiperlinks, podcasts)"
+                ]
+              }
+            ]
+          },
+          {
+            id: "lingua_estrangeira",
+            name: "Inglês / Espanhol",
+            groups: [
+              {
+                title: "Estratégias de Leitura e Gêneros Textuais",
+                hot: true,
+                items: [
+                  "Skimming (leitura global) e Scanning (busca de informações específicas)",
+                  "Cognatos e falsos cognatos (False Friends / Falsos Amigos)",
+                  "Tirinhas, cartuns e infográficos em língua estrangeira",
+                  "Notícias, artigos científicos e reportagens internacionais",
+                  "Letras de música, poemas e textos literários (questões identitárias, pós-coloniais e culturais)",
+                  "Pronomes, conectivos (Linking words / Conectores) e tempos verbais aplicados ao sentido"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "redacao",
+        area: "Redação",
+        shortName: "Redação",
+        subjects: [
+          {
+            id: "competencias_redacao",
+            name: "Estrutura e 5 Competências",
+            groups: [
+              {
+                title: "Domínio Estrutural e Competências 1 a 5",
+                hot: true,
+                items: [
+                  "Competência 1: Ortografia, acentuação, pontuação, concordância, regência, crase e paralelismo",
+                  "Competência 2: Leitura da proposta (evitar tangenciamento) e estrutura dissertativo-argumentativa",
+                  "Competência 2: Uso de repertório sociocultural legítimo, pertinente e produtivo",
+                  "Competência 3: Projeto de texto estratégico (Tese + Argumento 1 + Argumento 2) sem lacunas",
+                  "Competência 4: Coesão interparágrafos e intraparágrafos (repertório de conectivos sem repetição)",
+                  "Competência 5: Proposta de Intervenção completa (Agente + Ação + Meio/Modo + Efeito + Detalhamento)"
+                ]
+              },
+              {
+                title: "Eixos Temáticos e Repertórios Curingas",
+                hot: true,
+                items: [
+                  "Eixo 1: Educação, Ciência e Formação Cidadã",
+                  "Eixo 2: Saúde Pública, Saúde Mental e Bem-Estar",
+                  "Eixo 3: Meio Ambiente, Crise Climática e Sustentabilidade",
+                  "Eixo 4: Tecnologia, Inteligência Artificial e Mundo Digital",
+                  "Eixo 5: Cidadania, Direitos Humanos, Invisibilidade Social e Minorias",
+                  "Eixo 6: Cultura, Patrimônio, Esporte e Identidade Nacional",
+                  "Eixo 7: Trabalho, Economia e Desigualdade Social",
+                  "Eixo 8: Segurança Pública, Justiça e Democracia"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "humanas",
+        area: "Ciências Humanas",
+        shortName: "Humanas",
+        subjects: [
+          {
+            id: "historia_brasil",
+            name: "História do Brasil",
+            groups: [
+              {
+                title: "Brasil Pré-Colonial e Brasil Colônia",
+                hot: true,
+                items: [
+                  "Povos indígenas originários, expedições, escambo e extração do pau-brasil",
+                  "Capitanias hereditárias, Governo-Geral e ação dos jesuítas",
+                  "Economia açucareira e sociedade patriarcal no Nordeste",
+                  "Escravidão indígena e africana, tráfico negreiro, resistência e quilombos (Palmares)",
+                  "União Ibérica e Invasões Estrangeiras (Francesas e Holandesas / Brasil Holandês)",
+                  "Expansão territorial: entradas, bandeiras, pecuária, drogas do sertão e Tratados de Limites",
+                  "Ciclo do Ouro e sociedade mineradora no século XVIII",
+                  "Revoltas Nativistas (Beckman, Emboabas, Mascates, Felipe dos Santos)",
+                  "Revoltas Separatistas (Inconfidência Mineira e Conjuração Baiana)"
+                ]
+              },
+              {
+                title: "Período Joanino e Brasil Império (1808–1889)",
+                hot: true,
+                items: [
+                  "Vinda da Família Real (1808), Abertura dos Portos, Revolução Pernambucana de 1817 e Independência",
+                  "Primeiro Reinado: Constituição de 1824 (Poder Moderador), Confederação do Equador e Abdicação",
+                  "Período Regencial e Revoltas (Cabanagem, Farroupilha, Sabinada, Balaiada, Revolta dos Malês)",
+                  "Segundo Reinado — Política: Parlamentarismo às avessas, Liberais vs. Conservadores, Revolução Praieira",
+                  "Segundo Reinado — Economia: Café (Vale do Paraíba vs. Oeste Paulista), Era Mauá e imigração",
+                  "Guerra do Paraguai e suas consequências políticas e sociais",
+                  "Movimento Abolicionista, leis abolicionistas, Lei Áurea, crise do Império e Proclamação da República"
+                ]
+              },
+              {
+                title: "Primeira República / República Velha (1889–1930)",
+                hot: true,
+                items: [
+                  "República da Espada (Deodoro, Floriano, Constituição de 1891 e Encilhamento)",
+                  "República Oligárquica: Política dos Governadores, Coronelismo, Voto de Cabresto e Café com Leite",
+                  "Movimentos Rurais: Guerra de Canudos, Guerra do Contestado e Cangaço",
+                  "Movimentos Urbanos: Revolta da Vacina, Revolta da Chibata, Movimento Operário e Greve de 1917",
+                  "Crise dos anos 1920: Tenentismo, Coluna Prestes e Revolução de 1930"
+                ]
+              },
+              {
+                title: "Era Vargas (1930–1945) e República Populista (1946–1964)",
+                hot: true,
+                items: [
+                  "Governo Provisório, Revolução de 1932, Constituição de 1934 (voto feminino), AIB, ANL e Intentona Comunista",
+                  "Estado Novo (1937–1945): Constituição de 1937, DIP, trabalhismo (CLT), indústria de base e 2ª Guerra",
+                  "Governo Dutra (Constituição de 1946 e Guerra Fria) e Segundo Governo Vargas (Petrobras)",
+                  "Governo JK (Plano de Metas, rodoviarismo, Brasília e inflação)",
+                  "Governos Jânio Quadros e João Goulart (Reformas de Base e Golpe Civil-Militar de 1964)"
+                ]
+              },
+              {
+                title: "Ditadura Civil-Militar (1964–1985) e Nova República",
+                hot: true,
+                items: [
+                  "Castelo Branco e Costa e Silva (Atos Institucionais, Constituição de 1967 e AI-5)",
+                  "Anos de Chumbo (Médici): repressão, censura, resistência, movimentos culturais e Milagre Econômico",
+                  "Abertura política (Geisel e Figueiredo): crise econômica, Lei da Anistia, greves do ABC e Diretas Já",
+                  "Governo Sarney e Constituição Cidadã de 1988",
+                  "Governos Collor, Itamar Franco (Plano Real), FHC, Lula, Dilma, Temer e Brasil contemporâneo"
+                ]
+              }
+            ]
+          },
+          {
+            id: "historia_geral",
+            name: "História Geral",
+            groups: [
+              {
+                title: "Pré-História, Antiguidade Oriental e Clássica",
+                hot: true,
+                items: [
+                  "Paleolítico, Revolução Neolítica e Idade dos Metais",
+                  "Mesopotâmia, Egito Antigo, Hebreus, Fenícios e Persas",
+                  "Grécia Antiga: formação da pólis, democracia ateniense vs. Esparta, cultura helenística",
+                  "Roma Antiga: Monarquia, República, Império, escravismo, cristianismo e invasões bárbaras"
+                ]
+              },
+              {
+                title: "Idade Média",
+                hot: true,
+                items: [
+                  "Império Bizantino, Civilização Islâmica, Reinos Germânicos e Império Carolíngio",
+                  "Alta Idade Média: Feudalismo (economia, sociedade estamental e poder da Igreja Católica)",
+                  "Baixa Idade Média: Cruzadas, renascimento comercial e urbano, Monarquias Nacionais e Crise do Século XIV"
+                ]
+              },
+              {
+                title: "Idade Moderna",
+                hot: true,
+                items: [
+                  "Renascimento Cultural e Científico e Humanismo",
+                  "Reforma Protestante e Contrarreforma Católica",
+                  "Absolutismo Monárquico, Mercantilismo e Grandes Navegações",
+                  "Civilizações Pré-Colombianas (Maias, Astecas e Incas) e Colonização Espanhola e Inglesa na América",
+                  "Revoluções Inglesas do Século XVII, Iluminismo e Despotismo Esclarecido",
+                  "Primeira Revolução Industrial e Independência dos Estados Unidos"
+                ]
+              },
+              {
+                title: "Idade Contemporânea — Séculos XIX, XX e XXI",
+                hot: true,
+                items: [
+                  "Revolução Francesa, Era Napoleônica e Independências da América Espanhola e do Haiti",
+                  "Ideologias do Século XIX (Liberalismo, Socialismo, Anarquismo, Nacionalismo) e Unificações",
+                  "Segunda Revolução Industrial, Imperialismo e Neocolonialismo na África e na Ásia",
+                  "Primeira Guerra Mundial e Revolução Russa de 1917",
+                  "Crise de 1929 (New Deal) e Regimes Totalitários (Fascismo e Nazismo)",
+                  "Segunda Guerra Mundial e Holocausto",
+                  "Guerra Fria, Revolução Chinesa, Revolução Cubana e Ditaduras na América Latina",
+                  "Descolonização Afro-Asiática, Queda do Muro de Berlim, fim da URSS e Nova Ordem Mundial"
+                ]
+              }
+            ]
+          },
+          {
+            id: "geografia",
+            name: "Geografia",
+            groups: [
+              {
+                title: "Cartografia, Geologia, Relevo e Solos",
+                hot: true,
+                items: [
+                  "Coordenadas geográficas, Fusos horários, Escala cartográfica, Projeções e Sensoriamento Remoto",
+                  "Estrutura interna da Terra, Tectônica de Placas, vulcanismo e abalos sísmicos",
+                  "Ciclo das rochas e estruturas geológicas (escudos cristalinos, bacias sedimentares, dobramentos modernos)",
+                  "Agentes internos e externos do relevo e classificações do relevo brasileiro (Aziz Ab'Sáber e Jurandyr Ross)",
+                  "Intemperismo, formação e conservação dos solos (erosão, voçorocas, lixiviação, laterização, desertificação, arenização, plantio direto)"
+                ]
+              },
+              {
+                title: "Climatologia, Hidrografia, Biomas e Meio Ambiente",
+                hot: true,
+                items: [
+                  "Elementos e fatores climáticos, climas do Brasil e do mundo (interpretação de climogramas e massas de ar)",
+                  "Fenômenos climáticos: El Niño, La Niña, Inversão Térmica, Ilhas de Calor, Chuva Ácida e Aquecimento Global",
+                  "Ciclo hidrológico, distribuição da água, aquíferos (Guarani e Alter do Chão) e Bacias Hidrográficas brasileiras",
+                  "Biomas mundiais e Domínios Morfoclimáticos brasileiros (Amazônico, Cerrado, Mares de Morros, Caatinga, Araucárias, Pradarias e Faixas de Transição)",
+                  "Conferências Ambientais (Estocolmo, Rio-92, Kyoto, Acordo de Paris, COPs) e Unidades de Conservação"
+                ]
+              },
+              {
+                title: "Demografia, Migrações e Urbanização",
+                hot: true,
+                items: [
+                  "Conceitos demográficos, transição demográfica, pirâmides etárias e envelhecimento populacional",
+                  "Teorias demográficas (Malthusiana, Neomalthusiana, Reformista e Ecomalthusiana), PEA, IDH e Índice de Gini",
+                  "Migrações internacionais (refugiados, xenofobia) e migrações internas no Brasil (êxodo rural, pendular, sazonal)",
+                  "Urbanização mundial e brasileira: rede e hierarquia urbana (metrópole, megalópole, cidade global, conurbação)",
+                  "Problemas urbanos: macrocefalia, segregação socioespacial, gentrificação, mobilidade e saneamento"
+                ]
+              },
+              {
+                title: "Agropecuária, Indústria, Energia, Transporte e Geopolítica",
+                hot: true,
+                items: [
+                  "Sistemas agrícolas, Revolução Verde, agronegócio vs. agricultura familiar",
+                  "Estrutura fundiária brasileira, reforma agrária, conflitos no campo e fronteira agrícola (MATOPIBA)",
+                  "Modelos produtivos: Taylorismo, Fordismo, Toyotismo e Indústria 4.0",
+                  "Industrialização brasileira, concentração e desconcentração industrial",
+                  "Matriz energética mundial e brasileira (fontes renováveis e não renováveis) e Modais de transporte",
+                  "Globalização, DIT, blocos econômicos (UE, Mercosul, BRICS) e conflitos geopolíticos contemporâneos"
+                ]
+              }
+            ]
+          },
+          {
+            id: "filosofia",
+            name: "Filosofia",
+            groups: [
+              {
+                title: "Filosofia Antiga, Medieval e Renascentista",
+                hot: true,
+                items: [
+                  "Mito ao logos e Pré-Socráticos (Tales, Heráclito, Parmênides, Demócrito)",
+                  "Sofistas (relativismo/retórica) vs. Sócrates (maiêutica e ironia)",
+                  "Platão (Mundos Sensível e Inteligível, Alegoria da Caverna, política na República)",
+                  "Aristóteles (ato e potência, quatro causas, ética da virtude / justa medida e política)",
+                  "Filosofia Helenística (Estoicismo, Epicurismo, Cinismo e Ceticismo)",
+                  "Filosofia Medieval: Patrística (Santo Agostinho) e Escolástica (São Tomás de Aquino)",
+                  "Maquiavel (O Príncipe, virtù e fortuna, autonomia da política)"
+                ]
+              },
+              {
+                title: "Filosofia Moderna e Contemporânea",
+                hot: true,
+                items: [
+                  "Racionalismo (Descartes) vs. Empirismo Britânico (Francis Bacon, John Locke, David Hume)",
+                  "Contratualistas: Thomas Hobbes, John Locke e Jean-Jacques Rousseau",
+                  "Iluminismo (Montesquieu, Voltaire) e Immanuel Kant (criticismo, esclarecimento e imperativo categórico)",
+                  "Hegel (dialética), Karl Marx (materialismo histórico), Utilitarismo (Bentham e Mill), Schopenhauer e Nietzsche",
+                  "Fenomenologia e Existencialismo (Heidegger, Jean-Paul Sartre, Simone de Beauvoir, Camus)",
+                  "Escola de Frankfurt (Adorno, Horkheimer, Benjamin e Habermas — indústria cultural e agir comunicativo)",
+                  "Michel Foucault (microfísica do poder, biopolítica), Hannah Arendt (banalidade do mal) e John Rawls (Teoria da Justiça)",
+                  "Bioética (Hans Jonas) e Filosofia da Ciência (Karl Popper e Thomas Kuhn)"
+                ]
+              }
+            ]
+          },
+          {
+            id: "sociologia",
+            name: "Sociologia",
+            groups: [
+              {
+                title: "Clássicos, Cultura, Trabalho, Cidadania e Sociologia Brasileira",
+                hot: true,
+                items: [
+                  "Positivismo (Comte) e Émile Durkheim (fato social, coesão, solidariedade mecânica/orgânica, anomia)",
+                  "Max Weber (ação social, ética protestante, tipos de dominação legítima)",
+                  "Karl Marx (luta de classes, mais-valia, alienação, ideologia)",
+                  "Antropologia e Cultura: etnocentrismo, relativismo cultural, diversidade, patrimônio e indústria cultural",
+                  "Trabalho e Desigualdade: divisão do trabalho, precarização, uberização, estratificação (raça, classe e gênero)",
+                  "Estado, Democracia, Cidadania (T. H. Marshall), Direitos Humanos e Movimentos Sociais",
+                  "Sociologia Contemporânea: Pierre Bourdieu (habitus, violência simbólica), Zygmunt Bauman (modernidade líquida) e Castells",
+                  "Sociologia Brasileira: Gilberto Freyre, Sérgio Buarque de Holanda, Caio Prado Jr., Florestan Fernandes, Darcy Ribeiro, Lélia Gonzalez e Ailton Krenak"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "natureza",
+        area: "Ciências da Natureza",
+        shortName: "Natureza",
+        subjects: [
+          {
+            id: "biologia",
+            name: "Biologia",
+            groups: [
+              {
+                title: "Ecologia e Meio Ambiente (Tema nº 1 da Biologia)",
+                hot: true,
+                items: [
+                  "Conceitos básicos, cadeias e teias alimentares, níveis tróficos, pirâmides ecológicas e fluxo de energia",
+                  "Ciclos biogeoquímicos: água, carbono, oxigênio, nitrogênio (fixação, nitrificação, desnitrificação) e fósforo",
+                  "Relações ecológicas intraespecíficas e interespecíficas (harmônicas e desarmônicas)",
+                  "Dinâmica de populações, Sucessão ecológica e Biomas brasileiros (adaptações da fauna e flora)",
+                  "Impactos ambientais: eutrofização, magnificação trófica (bioacumulação), efeito estufa, chuva ácida, controle biológico e biorremediação"
+                ]
+              },
+              {
+                title: "Bioquímica e Citologia",
+                hot: true,
+                items: [
+                  "Água, sais minerais, carboidratos, lipídios, proteínas, enzimas, vitaminas e ácidos nucleicos (DNA e RNA)",
+                  "Células procariontes vs. eucariontes, Membrana plasmática e transportes celulares (difusão, osmose, transporte ativo)",
+                  "Organelas citoplasmáticas (ribossomos, retículos, Golgi, lisossomos, peroxissomos, mitocôndrias e cloroplastos)",
+                  "Bioenergética: Respiração celular aeróbia, Fermentação (lática e alcoólica), Fotossíntese e Quimiossíntese",
+                  "Núcleo, síntese proteica (replicação, transcrição e tradução) e Divisão celular (Mitose e Meiose)"
+                ]
+              },
+              {
+                title: "Genética, Biotecnologia e Evolução",
+                hot: true,
+                items: [
+                  "1ª Lei de Mendel, heredogramas, codominância, polialelia e Sistemas Sanguíneos (ABO e fator Rh)",
+                  "2ª Lei de Mendel, interação gênica, linkage, herança ligada ao sexo e mutações cromossômicas",
+                  "Biotecnologia: DNA recombinante, transgênicos, clonagem, células-tronco, PCR, teste de DNA, CRISPR e vacinas de RNAm",
+                  "Origem da vida, evidências evolutivas (homologia vs. analogia), Lamarckismo, Darwinismo, Neodarwinismo e Especiação"
+                ]
+              },
+              {
+                title: "Fisiologia Humana, Saúde Pública, Botânica e Zoologia",
+                hot: true,
+                items: [
+                  "Histologia e Sistemas Digestório, Respiratório, Circulatório e Excretor",
+                  "Sistemas Nervoso, Endócrino (hormônios e feedback), Reprodutor (ciclo menstrual e contracepção) e Imunológico (soros e vacinas)",
+                  "Parasitologia e Saúde: Viroses (Dengue, HIV, HPV, etc.), Bacterioses, Protozooses (Chagas, Malária, Leishmaniose) e Verminoses (Esquistossomose, Teníase/Cisticercose)",
+                  "Microbiologia (Vírus, Bactérias, Protistas e Fungos)",
+                  "Botânica: grupos evolutivos (Briófitas a Angiospermas) e Fisiologia Vegetal (condução de seiva, transpiração e fitormônios)",
+                  "Zoologia: filos de invertebrados e fisiologia comparada dos vertebrados"
+                ]
+              }
+            ]
+          },
+          {
+            id: "quimica",
+            name: "Química",
+            groups: [
+              {
+                title: "Química Geral e Inorgânica",
+                hot: true,
+                items: [
+                  "Propriedades da matéria, mudanças de estado físico, substâncias puras e misturas (eutéticas e azeotrópicas)",
+                  "Processos de separação de misturas (filtração, decantação, destilação simples e fracionada, extração) e tratamento de água/esgoto",
+                  "Modelos atômicos, distribuição eletrônica, Tabela Periódica e propriedades periódicas",
+                  "Ligações químicas (iônica, covalente e metálica), geometria molecular e polaridade",
+                  "Forças intermoleculares (London, dipolo permanente, ligação de hidrogênio) e relação com ponto de ebulição e solubilidade (sabões e detergentes)",
+                  "Funções inorgânicas (Ácidos, Bases, Sais e Óxidos; chuva ácida e calagem do solo) e reações inorgânicas",
+                  "Grandezas químicas (mol, massa molar) e Cálculo Estequiométrico (pureza, rendimento, excesso e limitante)"
+                ]
+              },
+              {
+                title: "Físico-Química",
+                hot: true,
+                items: [
+                  "Soluções: curvas de solubilidade, unidades de concentração (comum, molaridade, título, ppm), diluição e titulação",
+                  "Propriedades coligativas (tonoscopia, ebulioscopia, crioscopia e osmose)",
+                  "Termoquímica: reações endo/exotérmicas, entalpia de formação/combustão, energia de ligação e Lei de Hess",
+                  "Cinética Química: velocidade de reação, energia de ativação, fatores cinéticos e catalisadores",
+                  "Equilíbrio Químico (Kc, Kp, Princípio de Le Chatelier) e Equilíbrio Iônico (pH, pOH, hidrólise salina, solução-tampão e Kps)",
+                  "Eletroquímica: Pilhas (ddp, espontaneidade, corrosão e metal de sacrifício) e Eletrólise (ígnea, aquosa e Leis de Faraday)",
+                  "Radioatividade: emissões alfa, beta e gama, tempo de meia-vida, fissão e fusão nuclear"
+                ]
+              },
+              {
+                title: "Química Orgânica e Ambiental",
+                hot: true,
+                items: [
+                  "Classificação de cadeias carbônicas, hibridização e reconhecimento das Funções Orgânicas (oxigenadas, nitrogenadas e hidrocarbonetos)",
+                  "Isomeria Plana (função, cadeia, posição, tautomeria, metameria) e Espacial (geométrica cis-trans e óptica / carbono quiral)",
+                  "Propriedades físicas (ponto de ebulição e solubilidade) e acidez/basicidade de compostos orgânicos",
+                  "Reações Orgânicas: adição, substituição, eliminação, oxidação, esterificação, transesterificação (biodiesel) e saponificação (sabão)",
+                  "Polímeros sintéticos, petróleo, biocombustíveis e Química Ambiental"
+                ]
+              }
+            ]
+          },
+          {
+            id: "fisica",
+            name: "Física",
+            groups: [
+              {
+                title: "Mecânica (Cinemática, Dinâmica, Energia, Estática e Hidrostática)",
+                hot: true,
+                items: [
+                  "Cinemática: velocidade média, MU, MUV, gráficos, queda livre, lançamentos e Movimento Circular Uniforme (MCU e transmissão)",
+                  "Dinâmica: Leis de Newton, força peso, normal, tração, elástica (Hooke), força de atrito e resultante centrípeta",
+                  "Trabalho, Potência, Rendimento e Conservação da Energia Mecânica (cinética, potencial gravitacional e elástica)",
+                  "Impulso, Quantidade de Movimento, Teorema do Impulso e Colisões",
+                  "Estática (torque/alavancas), Gravitação Universal (Leis de Kepler) e Hidrostática (pressão, Stevin, Pascal e Empuxo de Arquimedes)"
+                ]
+              },
+              {
+                title: "Termologia, Ondulatória, Acústica e Óptica Geométrica",
+                hot: true,
+                items: [
+                  "Termometria, Dilatação térmica e Propagação de calor (condução, convecção e irradiação)",
+                  "Calorimetria: calor sensível, calor latente, curvas de aquecimento e equilíbrio térmico",
+                  "Gases ideais, 1ª e 2ª Leis da Termodinâmica, máquinas térmicas e Ciclo de Carnot",
+                  "Ondulatória: classificação das ondas, espectro eletromagnético e equação fundamental (v = λ · f)",
+                  "Fenômenos ondulatórios: reflexão, refração, difração, interferência, polarização, ressonância e efeito Doppler",
+                  "Acústica: qualidades fisiológicas do som (altura, intensidade, timbre), eco, reverberação e ondas estacionárias",
+                  "Óptica Geométrica: reflexão (espelhos planos e esféricos), refração (Snell, reflexão total/fibra óptica, dispersão/arco-íris), lentes e Óptica da Visão (miopia, hipermetropia, astigmatismo, presbiopia)"
+                ]
+              },
+              {
+                title: "Eletricidade, Magnetismo e Física Moderna",
+                hot: true,
+                items: [
+                  "Eletrostática: processos de eletrização, Lei de Coulomb, campo e potencial elétrico",
+                  "Eletrodinâmica: corrente elétrica, 1ª e 2ª Leis de Ohm, Potência elétrica, efeito Joule e Consumo de Energia (kWh)",
+                  "Circuitos elétricos: associação de resistores (série, paralelo e mista), curto-circuito, amperímetro, voltímetro e geradores",
+                  "Eletromagnetismo: campo e força magnética, Indução Eletromagnética (Lei de Faraday-Lenz) e transformadores",
+                  "Física Moderna: efeito fotoelétrico, dualidade onda-partícula e noções de relatividade"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "matematica",
+        area: "Matemática",
+        shortName: "Matemática",
+        subjects: [
+          {
+            id: "matematica_basica",
+            name: "Matemática Básica e Financeira",
+            groups: [
+              {
+                title: "Aritmética, Proporcionalidade e Porcentagem",
+                hot: true,
+                items: [
+                  "Operações fundamentais, divisibilidade, MMC e MDC (problemas de ciclos e encontros)",
+                  "Frações, números decimais, dízimas periódicas, potenciação, radiciação e Notação Científica",
+                  "Sistema métrico decimal e conversão de unidades de comprimento, área, volume, massa, capacidade (1 m³ = 1000 L) e tempo",
+                  "Razão, proporção, divisão em partes diretamente e inversamente proporcionais",
+                  "Escalas lineares, superficiais (E²) e volumétricas (E³) em mapas, plantas e maquetes",
+                  "Regra de três simples e composta",
+                  "Porcentagem, aumentos e descontos sucessivos, lucro e prejuízo",
+                  "Matemática Financeira: Juros Simples e Juros Compostos"
+                ]
+              }
+            ]
+          },
+          {
+            id: "algebra_funcoes",
+            name: "Álgebra, Funções e Sequências",
+            groups: [
+              {
+                title: "Conjuntos, Funções e Progressões",
+                hot: true,
+                items: [
+                  "Conjuntos numéricos, operações com conjuntos (Diagramas de Venn), equações e sistemas lineares",
+                  "Interpretação de gráficos de funções (domínio, imagem, crescimento, taxa de variação, máximos e mínimos)",
+                  "Função Afim / 1º Grau (f(x) = ax + b, taxa de variação e problemas de custo fixo/variável)",
+                  "Função Quadrática / 2º Grau (raízes, vértice da parábola e problemas de máximo e mínimo)",
+                  "Função Exponencial e Logarítmica (propriedades dos logaritmos, meia-vida, crescimento e escalas logarítmicas)",
+                  "Sequências numéricas, padrões cíclicos, Progressão Aritmética (PA) e Progressão Geométrica (PG)"
+                ]
+              }
+            ]
+          },
+          {
+            id: "geometria_trigonometria",
+            name: "Geometria e Trigonometria",
+            groups: [
+              {
+                title: "Geometria Plana, Espacial, Analítica e Trigonometria",
+                hot: true,
+                items: [
+                  "Geometria Plana: ângulos, Teorema de Tales, semelhança de triângulos, Teorema de Pitágoras e polígonos regulares",
+                  "Áreas de figuras planas (triângulos, quadriláteros, hexágono regular, círculo, setor e coroa circular)",
+                  "Trigonometria no triângulo retângulo, Lei dos Senos e Cossenos, ciclo trigonométrico e Funções Trigonométricas (seno e cosseno em fenômenos periódicos)",
+                  "Visão Espacial: planificação de sólidos, simetria e Projeção Ortogonal sobre o plano",
+                  "Geometria Espacial: poliedros, Prismas (cubo e paralelepípedo), Pirâmides, Cilindros, Cones, Esferas e Troncos (áreas e volumes)",
+                  "Geometria Analítica (ponto, reta e circunferência) e Matrizes"
+                ]
+              }
+            ]
+          },
+          {
+            id: "estatistica_probabilidade",
+            name: "Estatística, Combinatória e Probabilidade",
+            groups: [
+              {
+                title: "Análise de Dados, Contagem e Probabilidade",
+                hot: true,
+                items: [
+                  "Estatística: leitura e interpretação de tabelas e gráficos (barras, linhas, setores, histogramas, radar)",
+                  "Medidas de Tendência Central: Média Aritmética Simples, Média Ponderada, Mediana e Moda",
+                  "Medidas de Dispersão: Amplitude, Variância e Desvio-Padrão (regularidade e homogeneidade)",
+                  "Análise Combinatória: Princípio Fundamental da Contagem (PFC), Permutação (simples, com repetição e circular), Arranjo e Combinação",
+                  "Probabilidade: definição clássica, probabilidade complementar, união de eventos, probabilidade condicional, eventos independentes e binomial"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
+    const STORAGE_KEY = "enem_2026_checklist_v1";
+
+    // Build flat ordered list of items with deterministic IDs
+    const ALL_ITEMS = [];
+    ENEM_DATA.forEach((areaObj) => {
+      areaObj.subjects.forEach((subjObj) => {
+        subjObj.groups.forEach((groupObj, gIdx) => {
+          groupObj.items.forEach((itemText, iIdx) => {
+            const id = `${areaObj.id}__${subjObj.id}__${gIdx}__${iIdx}`;
+            ALL_ITEMS.push({
+              id,
+              areaId: areaObj.id,
+              areaName: areaObj.area,
+              areaShort: areaObj.shortName,
+              subjectId: subjObj.id,
+              subjectName: subjObj.name,
+              groupTitle: groupObj.title,
+              hot: groupObj.hot,
+              text: itemText
+            });
+          });
+        });
+      });
+    });
+
+    // App State
+    let state = {
+      completed: {}, // { [itemId]: true }
+      review: {},    // { [itemId]: true }
+      notes: {},     // { [itemId]: "string" }
+      skippedOffset: 0,
+      activeArea: "all",
+      activeSubject: "all",
+      search: "",
+      statusFilter: "all",
+      hotOnly: false
+    };
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          state.completed = parsed.completed || {};
+          state.review = parsed.review || {};
+          state.notes = parsed.notes || {};
+        }
+      } catch (e) {
+        console.warn("Erro ao carregar estado do localStorage:", e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            completed: state.completed,
+            review: state.review,
+            notes: state.notes,
+            updatedAt: new Date().toISOString()
+          })
+        );
+        const ind = document.getElementById("save-indicator");
+        ind.textContent = "✓ Progresso salvo (" + new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) + ")";
+      } catch (e) {
+        console.warn("Erro ao salvar no localStorage:", e);
+      }
+    }
+
+    function getPendingQueue() {
+      return ALL_ITEMS.filter((item) => {
+        if (state.completed[item.id]) return false;
+        if (state.activeArea !== "all" && item.areaId !== state.activeArea) return false;
+        if (state.activeSubject !== "all" && item.subjectId !== state.activeSubject) return false;
+        if (state.hotOnly && !item.hot) return false;
+        return true;
+      });
+    }
+
+    function renderUpNext() {
+      const pending = getPendingQueue();
+      const titleEl = document.getElementById("next-topic-title");
+      const groupEl = document.getElementById("next-topic-group");
+      const badgeEl = document.getElementById("next-area-badge");
+      const hotEl = document.getElementById("next-hot-badge");
+      const btnComplete = document.getElementById("btn-complete-next");
+      const btnSkip = document.getElementById("btn-skip-next");
+      const btnLocate = document.getElementById("btn-locate-next");
+
+      if (pending.length === 0) {
+        titleEl.textContent = "Parabéns! Todos os assuntos deste filtro foram concluídos!";
+        groupEl.textContent = "Altere os filtros abaixo ou selecione outra área para continuar estudando.";
+        badgeEl.textContent = "100% Concluído";
+        hotEl.classList.add("hidden");
+        btnComplete.disabled = true;
+        btnComplete.classList.add("opacity-50", "cursor-not-allowed");
+        btnSkip.classList.add("hidden");
+        btnLocate.classList.add("hidden");
+        return;
+      }
+
+      btnComplete.disabled = false;
+      btnComplete.classList.remove("opacity-50", "cursor-not-allowed");
+      btnSkip.classList.remove("hidden");
+      btnLocate.classList.remove("hidden");
+
+      const idx = state.skippedOffset % pending.length;
+      const current = pending[idx];
+
+      titleEl.textContent = current.text;
+      groupEl.textContent = `${current.subjectName} • ${current.groupTitle}`;
+      badgeEl.textContent = `${current.areaShort} (${idx + 1} de ${pending.length} restantes no filtro)`;
+      if (current.hot) {
+        hotEl.classList.remove("hidden");
+      } else {
+        hotEl.classList.add("hidden");
+      }
+
+      btnComplete.onclick = () => {
+        state.completed[current.id] = true;
+        state.skippedOffset = 0;
+        saveState();
+        renderAll();
+      };
+
+      btnSkip.onclick = () => {
+        state.skippedOffset = (state.skippedOffset + 1) % pending.length;
+        renderUpNext();
+      };
+
+      btnLocate.onclick = () => {
+        const el = document.getElementById(`item-row-${current.id}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("ring-2", "ring-[var(--primary)]");
+          setTimeout(() => el.classList.remove("ring-2", "ring-[var(--primary)]"), 2000);
+        }
+      };
+    }
+
+    function renderStats() {
+      const total = ALL_ITEMS.length;
+      const done = ALL_ITEMS.filter((i) => state.completed[i.id]).length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+      document.getElementById("overall-stats").textContent = `${done} / ${total} concluídos (${pct}%)`;
+      document.getElementById("overall-bar").style.width = `${pct}%`;
+
+      const summaryGrid = document.getElementById("area-summary-grid");
+      summaryGrid.innerHTML = "";
+
+      ENEM_DATA.forEach((areaObj) => {
+        const areaItems = ALL_ITEMS.filter((i) => i.areaId === areaObj.id);
+        const areaDone = areaItems.filter((i) => state.completed[i.id]).length;
+        const areaPct = areaItems.length > 0 ? Math.round((areaDone / areaItems.length) * 100) : 0;
+
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = `text-left p-3 rounded-lg border transition ${
+          state.activeArea === areaObj.id
+            ? "border-[var(--primary)] bg-[var(--background)]"
+            : "border-[var(--border)] bg-[var(--background)] hover:opacity-80"
+        }`;
+        card.onclick = () => {
+          state.activeArea = state.activeArea === areaObj.id ? "all" : areaObj.id;
+          state.activeSubject = "all";
+          state.skippedOffset = 0;
+          renderAll();
+        };
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between text-xs font-semibold text-[var(--foreground)]">
+            <span class="truncate">${areaObj.shortName}</span>
+            <span>${areaPct}%</span>
+          </div>
+          <div class="w-full h-1.5 bg-[var(--card)] border border-[var(--border)] rounded-full overflow-hidden mt-1.5">
+            <div class="h-full bg-[var(--primary)] transition-all duration-300" style="width: ${areaPct}%"></div>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-1">${areaDone}/${areaItems.length} tópicos</div>
+        `;
+        summaryGrid.appendChild(card);
+      });
+    }
+
+    function renderTabs() {
+      const areaTabs = document.getElementById("area-tabs");
+      areaTabs.innerHTML = "";
+
+      const tabs = [{ id: "all", label: "Todas as Áreas" }, ...ENEM_DATA.map((a) => ({ id: a.id, label: a.area }))];
+
+      tabs.forEach((t) => {
+        const active = state.activeArea === t.id;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+          active
+            ? "bg-[var(--primary)] text-[var(--primary-foreground)]"
+            : "bg-[var(--background)] text-[var(--foreground)] border border-[var(--border)] hover:opacity-80"
+        }`;
+        btn.textContent = t.label;
+        btn.onclick = () => {
+          state.activeArea = t.id;
+          state.activeSubject = "all";
+          state.skippedOffset = 0;
+          renderAll();
+        };
+        areaTabs.appendChild(btn);
+      });
+
+      // Subject Pills
+      const subjectPills = document.getElementById("subject-pills");
+      subjectPills.innerHTML = "";
+
+      const relevantSubjects = [];
+      ENEM_DATA.forEach((a) => {
+        if (state.activeArea === "all" || state.activeArea === a.id) {
+          a.subjects.forEach((s) => relevantSubjects.push({ ...s, areaId: a.id }));
+        }
+      });
+
+      const allSubjBtn = document.createElement("button");
+      allSubjBtn.type = "button";
+      allSubjBtn.className = `px-2.5 py-1 rounded-md text-xs font-medium transition ${
+        state.activeSubject === "all"
+          ? "bg-[var(--foreground)] text-[var(--background)]"
+          : "bg-[var(--background)] text-[var(--muted-foreground)] border border-[var(--border)] hover:text-[var(--foreground)]"
+      }`;
+      allSubjBtn.textContent = "Todas as Matérias";
+      allSubjBtn.onclick = () => {
+        state.activeSubject = "all";
+        state.skippedOffset = 0;
+        renderAll();
+      };
+      subjectPills.appendChild(allSubjBtn);
+
+      relevantSubjects.forEach((s) => {
+        const sItems = ALL_ITEMS.filter((i) => i.subjectId === s.id);
+        const sDone = sItems.filter((i) => state.completed[i.id]).length;
+        const active = state.activeSubject === s.id;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `px-2.5 py-1 rounded-md text-xs font-medium transition ${
+          active
+            ? "bg-[var(--foreground)] text-[var(--background)]"
+            : "bg-[var(--background)] text-[var(--muted-foreground)] border border-[var(--border)] hover:text-[var(--foreground)]"
+        }`;
+        btn.textContent = `${s.name} (${sDone}/${sItems.length})`;
+        btn.onclick = () => {
+          state.activeSubject = s.id;
+          state.skippedOffset = 0;
+          renderAll();
+        };
+        subjectPills.appendChild(btn);
+      });
+    }
+
+    function renderChecklist() {
+      const container = document.getElementById("checklist-container");
+      container.innerHTML = "";
+
+      const query = state.search.trim().toLowerCase();
+      let visibleCount = 0;
+
+      ENEM_DATA.forEach((areaObj) => {
+        if (state.activeArea !== "all" && state.activeArea !== areaObj.id) return;
+
+        areaObj.subjects.forEach((subjObj) => {
+          if (state.activeSubject !== "all" && state.activeSubject !== subjObj.id) return;
+
+          // Filter groups and items
+          const renderedGroups = [];
+
+          subjObj.groups.forEach((groupObj, gIdx) => {
+            if (state.hotOnly && !groupObj.hot) return;
+
+            const matchingItems = [];
+            groupObj.items.forEach((itemText, iIdx) => {
+              const id = `${areaObj.id}__${subjObj.id}__${gIdx}__${iIdx}`;
+              const isDone = !!state.completed[id];
+              const isReview = !!state.review[id];
+              const noteText = state.notes[id] || "";
+
+              if (state.statusFilter === "pending" && isDone) return;
+              if (state.statusFilter === "done" && !isDone) return;
+              if (state.statusFilter === "review" && !isReview) return;
+
+              if (query) {
+                const hay = `${subjObj.name} ${groupObj.title} ${itemText} ${noteText}`.toLowerCase();
+                if (!hay.includes(query)) return;
+              }
+
+              matchingItems.push({ id, text: itemText, isDone, isReview, noteText });
+            });
+
+            if (matchingItems.length > 0) {
+              renderedGroups.push({
+                title: groupObj.title,
+                hot: groupObj.hot,
+                items: matchingItems
+              });
+            }
+          });
+
+          if (renderedGroups.length === 0) return;
+
+          visibleCount += renderedGroups.reduce((acc, g) => acc + g.items.length, 0);
+
+          const subjAllItems = ALL_ITEMS.filter((i) => i.subjectId === subjObj.id);
+          const subjDoneCount = subjAllItems.filter((i) => state.completed[i.id]).length;
+          const subjPct = subjAllItems.length > 0 ? Math.round((subjDoneCount / subjAllItems.length) * 100) : 0;
+
+          const section = document.createElement("section");
+          section.className = "bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4";
+
+          const header = document.createElement("div");
+          header.className = "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 border-b border-[var(--border)]";
+          header.innerHTML = `
+            <div>
+              <span class="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">${areaObj.area}</span>
+              <h3 class="text-lg font-bold text-[var(--foreground)]">${subjObj.name}</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-semibold text-[var(--muted-foreground)]">${subjDoneCount}/${subjAllItems.length} (${subjPct}%)</span>
+              <div class="w-28 h-2 bg-[var(--background)] border border-[var(--border)] rounded-full overflow-hidden">
+                <div class="h-full bg-[var(--primary)] transition-all duration-300" style="width: ${subjPct}%"></div>
+              </div>
+            </div>
+          `;
+          section.appendChild(header);
+
+          renderedGroups.forEach((g) => {
+            const groupBox = document.createElement("div");
+            groupBox.className = "space-y-2 pt-1";
+
+            const groupHeader = document.createElement("div");
+            groupHeader.className = "flex items-center justify-between gap-2";
+
+            const allGroupDone = g.items.every((i) => i.isDone);
+
+            groupHeader.innerHTML = `
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-semibold text-[var(--foreground)]">${g.title}</h4>
+                ${
+                  g.hot
+                    ? '<span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-500 font-semibold">🔥 Alta Incidência</span>'
+                    : ""
+                }
+              </div>
+              <button type="button" class="btn-toggle-group text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] underline">
+                ${allGroupDone ? "Desmarcar bloco" : "Marcar bloco"}
+              </button>
+            `;
+
+            groupHeader.querySelector(".btn-toggle-group").onclick = () => {
+              const targetState = !allGroupDone;
+              g.items.forEach((it) => {
+                if (targetState) state.completed[it.id] = true;
+                else delete state.completed[it.id];
+              });
+              saveState();
+              renderAll();
+            };
+
+            groupBox.appendChild(groupHeader);
+
+            const list = document.createElement("div");
+            list.className = "space-y-1.5";
+
+            g.items.forEach((item) => {
+              const row = document.createElement("div");
+              row.id = `item-row-${item.id}`;
+              row.className = `p-3 rounded-lg border transition ${
+                item.isDone
+                  ? "bg-[var(--background)] border-[var(--border)] opacity-70"
+                  : "bg-[var(--background)] border-[var(--border)]"
+              }`;
+
+              const mainLine = document.createElement("div");
+              mainLine.className = "flex items-start justify-between gap-3";
+
+              const label = document.createElement("label");
+              label.className = "flex items-start gap-3 cursor-pointer flex-1 select-none";
+
+              const checkbox = document.createElement("input");
+              checkbox.type = "checkbox";
+              checkbox.checked = item.isDone;
+              checkbox.className = "mt-1 w-4 h-4 accent-[var(--primary)] cursor-pointer shrink-0";
+              checkbox.onchange = () => {
+                if (checkbox.checked) state.completed[item.id] = true;
+                else delete state.completed[item.id];
+                state.skippedOffset = 0;
+                saveState();
+                renderAll();
+              };
+
+              const span = document.createElement("span");
+              span.className = `text-sm ${
+                item.isDone ? "line-through text-[var(--muted-foreground)]" : "text-[var(--foreground)]"
+              }`;
+              span.textContent = item.text;
+
+              label.appendChild(checkbox);
+              label.appendChild(span);
+
+              const actions = document.createElement("div");
+              actions.className = "flex items-center gap-1.5 shrink-0";
+
+              // Review flag button
+              const btnRev = document.createElement("button");
+              btnRev.type = "button";
+              btnRev.title = "Marcar para Revisão";
+              btnRev.className = `px-2 py-0.5 rounded text-xs font-medium border transition ${
+                item.isReview
+                  ? "border-amber-500 text-amber-500 bg-amber-500/10"
+                  : "border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+              }`;
+              btnRev.textContent = item.isReview ? "★ Revisar" : "☆ Revisar";
+              btnRev.onclick = () => {
+                if (state.review[item.id]) delete state.review[item.id];
+                else state.review[item.id] = true;
+                saveState();
+                renderAll();
+              };
+
+              // Note toggle button
+              const btnNote = document.createElement("button");
+              btnNote.type = "button";
+              btnNote.className = `px-2 py-0.5 rounded text-xs font-medium border transition ${
+                item.noteText
+                  ? "border-[var(--primary)] text-[var(--primary)]"
+                  : "border-[var(--border)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+              }`;
+              btnNote.textContent = item.noteText ? "📝 Nota" : "+ Nota";
+
+              actions.appendChild(btnRev);
+              actions.appendChild(btnNote);
+
+              mainLine.appendChild(label);
+              mainLine.appendChild(actions);
+              row.appendChild(mainLine);
+
+              // Note input area
+              const noteBox = document.createElement("div");
+              noteBox.className = item.noteText ? "mt-2 pl-7" : "hidden mt-2 pl-7";
+
+              const noteInput = document.createElement("input");
+              noteInput.type = "text";
+              noteInput.value = item.noteText;
+              noteInput.placeholder = "Anotar resumo, página da apostila ou qtd de acertos...";
+              noteInput.className =
+                "w-full px-2.5 py-1.5 text-xs rounded border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] placeholder-[var(--muted-foreground)] focus:outline-none focus:border-[var(--primary)]";
+
+              noteInput.onchange = () => {
+                const val = noteInput.value.trim();
+                if (val) state.notes[item.id] = val;
+                else delete state.notes[item.id];
+                saveState();
+              };
+
+              btnNote.onclick = () => {
+                noteBox.classList.toggle("hidden");
+                if (!noteBox.classList.contains("hidden")) noteInput.focus();
+              };
+
+              noteBox.appendChild(noteInput);
+              row.appendChild(noteBox);
+
+              list.appendChild(row);
+            });
+
+            groupBox.appendChild(list);
+            section.appendChild(groupBox);
+          });
+
+          container.appendChild(section);
+        });
+      });
+
+      if (visibleCount === 0) {
+        container.innerHTML = `
+          <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-8 text-center space-y-2">
+            <p class="text-base font-semibold text-[var(--foreground)]">Nenhum assunto encontrado para este filtro.</p>
+            <p class="text-sm text-[var(--muted-foreground)]">Tente limpar a busca ou alterar os filtros de status.</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderAll() {
+      renderStats();
+      renderUpNext();
+      renderTabs();
+      renderChecklist();
+    }
+
+    // Event Listeners
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      state.search = e.target.value;
+      renderChecklist();
+    });
+
+    document.getElementById("status-filter").addEventListener("change", (e) => {
+      state.statusFilter = e.target.value;
+      renderChecklist();
+    });
+
+    document.getElementById("hot-filter").addEventListener("change", (e) => {
+      state.hotOnly = e.target.checked;
+      state.skippedOffset = 0;
+      renderAll();
+    });
+
+    document.getElementById("btn-export").addEventListener("click", () => {
+      const dataStr = JSON.stringify(
+        {
+          completed: state.completed,
+          review: state.review,
+          notes: state.notes,
+          exportedAt: new Date().toISOString()
+        },
+        null,
+        2
+      );
+      const blob = new Blob([dataStr], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "progresso-enem-2026.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById("input-import").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const parsed = JSON.parse(ev.target.result);
+          state.completed = parsed.completed || {};
+          state.review = parsed.review || {};
+          state.notes = parsed.notes || {};
+          saveState();
+          renderAll();
+        } catch (err) {
+          alert("Arquivo de backup inválido.");
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    document.getElementById("btn-reset").addEventListener("click", () => {
+      if (confirm("Tem certeza que deseja zerar todo o progresso marcado?")) {
+        state.completed = {};
+        state.review = {};
+        state.notes = {};
+        state.skippedOffset = 0;
+        saveState();
+        renderAll();
+      }
+    });
+
+    // Initialize
+    loadState();
+    renderAll();
+  </script>
+</body>
+</html>
